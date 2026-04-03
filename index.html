@@ -3,981 +3,1123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Japa to Canada — Your Complete Relocation Blueprint</title>
-  <meta name="description" content="The definitive step-by-step guide for Nigerians relocating to Canada. From visa application to landing — done right." />
+  <title>Canada Without Agents — The Complete Student Visa Guide for Nigerians</title>
+  <meta name="description" content="Get your Canadian Student Visa without paying a single agent. The complete step-by-step guide written by someone who did it himself." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Outfit:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --cream: #F5EFE0;
-      --deep-green: #0D2B1F;
-      --mid-green: #164232;
-      --leaf: #2A7A4B;
-      --amber: #D4831A;
-      --gold: #F0A832;
-      --red: #C0392B;
-      --white: #FAFAF7;
-      --text-body: #2C2C2C;
-      --text-muted: #6B6B5E;
+      --ink: #0A0A0A;
+      --forest: #0E2E1A;
+      --pine: #1A4D2E;
+      --leaf: #2D7A4F;
+      --maple: #C8102E;
+      --maple-light: #E8314F;
+      --gold: #E8A020;
+      --gold-light: #F5C254;
+      --cream: #FAF6EE;
+      --warm-white: #FDFAF5;
+      --text-mid: #4A4A4A;
+      --text-light: #7A7A7A;
+      --border: rgba(10,10,10,0.1);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Outfit', sans-serif;
       background: var(--cream);
-      color: var(--text-body);
+      color: var(--ink);
       overflow-x: hidden;
     }
 
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--maple); border-radius: 2px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(10, 46, 26, 0.97);
+      backdrop-filter: blur(16px);
+      padding: 0 5%;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5%;
-      background: rgba(13, 43, 31, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(240,168,50,0.15);
+      height: 68px;
+      border-bottom: 1px solid rgba(232,160,32,0.2);
     }
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem; font-weight: 700;
-      color: var(--gold); letter-spacing: 0.02em;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--gold);
+      letter-spacing: -0.01em;
     }
-    .nav-logo span { color: var(--white); font-style: italic; }
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav ul li a {
-      font-family: 'Syne', sans-serif; font-size: 0.78rem;
-      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(245,239,224,0.7); text-decoration: none;
+    .nav-logo span { color: rgba(255,255,255,0.7); font-weight: 400; font-style: italic; }
+    .nav-links { display: flex; align-items: center; gap: 2.2rem; }
+    .nav-links a {
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); text-decoration: none;
       transition: color 0.2s;
     }
-    nav ul li a:hover { color: var(--gold); }
-    .nav-cta {
-      font-family: 'Syne', sans-serif; font-size: 0.78rem;
-      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      background: var(--amber); color: var(--white);
-      border: none; padding: 0.65rem 1.5rem; border-radius: 2px;
+    .nav-links a:hover { color: var(--gold); }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      border: none; padding: 0.6rem 1.4rem; border-radius: 2px;
       cursor: pointer; text-decoration: none;
       transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
     }
-    .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 24px; height: 2px; background: var(--gold); display: block; }
+    .nav-btn:hover { background: var(--maple-light); transform: translateY(-1px); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+    }
+    .hamburger span { width: 22px; height: 2px; background: var(--gold); display: block; border-radius: 2px; transition: 0.3s; }
+    .mobile-menu {
+      display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 199;
+      background: rgba(10, 46, 26, 0.98); padding: 1.5rem 5%;
+      border-bottom: 1px solid rgba(232,160,32,0.15);
+      flex-direction: column; gap: 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu .nav-btn { align-self: flex-start; margin-top: 0.5rem; }
 
-    /* ─── HERO ─── */
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: var(--deep-green);
-      display: grid; grid-template-columns: 1fr 1fr;
-      position: relative; overflow: hidden;
+      background: var(--forest);
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding: 100px 5% 60px;
     }
-    .hero-bg-pattern {
+    .hero-bg {
       position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 70% 20%, rgba(42,122,75,0.25) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(212,131,26,0.12) 0%, transparent 45%);
+      background:
+        radial-gradient(ellipse at 80% 10%, rgba(200,16,46,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 90%, rgba(45,122,79,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(14,46,26,0.4) 0%, transparent 70%);
     }
-    .hero-grid-lines {
-      position: absolute; inset: 0; opacity: 0.04;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(245,239,224,0.8) 59px, rgba(245,239,224,0.8) 60px),
-        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(245,239,224,0.8) 59px, rgba(245,239,224,0.8) 60px);
+    .hero-leaf {
+      position: absolute;
+      right: -60px; top: 50%;
+      transform: translateY(-50%);
+      width: 55vw; max-width: 700px;
+      opacity: 0.04;
+      pointer-events: none;
     }
-    .hero-left {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 10rem 5% 6rem 8%;
+    .hero-leaf svg { width: 100%; height: auto; fill: #E8A020; }
+    .hero-inner {
       position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center;
     }
-    .hero-tag {
+    .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: 'Syne', sans-serif; font-size: 0.7rem;
-      font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1.8rem;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
     }
-    .hero-tag::before {
-      content: '';
-      width: 28px; height: 2px; background: var(--gold);
+    .hero-eyebrow::before {
+      content: '🍁'; font-size: 0.85rem;
     }
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
-      font-weight: 700; line-height: 1.05;
-      color: var(--white); margin-bottom: 1.8rem;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 900; line-height: 1.05;
+      color: white; margin-bottom: 1.6rem;
+      letter-spacing: -0.02em;
     }
-    .hero-headline em { color: var(--gold); font-style: italic; }
-    .hero-headline .line-red { color: #E8F5E3; }
+    h1 em { color: var(--gold); font-style: italic; }
+    h1 .accent { color: var(--maple-light); }
     .hero-sub {
-      font-size: 1.05rem; font-weight: 300; line-height: 1.75;
-      color: rgba(245,239,224,0.72);
-      max-width: 440px; margin-bottom: 2.8rem;
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      font-weight: 300; line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px; margin-bottom: 2.5rem;
     }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      font-family: 'Syne', sans-serif; font-size: 0.82rem;
-      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      background: var(--amber); color: var(--white);
-      border: none; padding: 1rem 2.2rem; border-radius: 2px;
-      cursor: pointer; text-decoration: none; display: inline-block;
+    .hero-sub strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-maple {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      border: none; padding: 1rem 2rem; border-radius: 2px;
+      cursor: pointer; text-decoration: none;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(212,131,26,0.35);
+      box-shadow: 0 4px 24px rgba(200,16,46,0.4);
     }
-    .btn-primary:hover { background: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,131,26,0.45); }
-    .btn-secondary {
-      font-family: 'Syne', sans-serif; font-size: 0.82rem;
-      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-      background: transparent; color: rgba(245,239,224,0.8);
-      border: 1px solid rgba(245,239,224,0.25);
-      padding: 1rem 2rem; border-radius: 2px;
-      cursor: pointer; text-decoration: none; display: inline-block;
+    .btn-maple:hover { background: var(--maple-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,16,46,0.5); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      background: transparent; color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 1rem 1.8rem; border-radius: 2px;
+      cursor: pointer; text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-trust {
-      display: flex; align-items: center; gap: 1.2rem;
-      margin-top: 3rem; padding-top: 2rem;
-      border-top: 1px solid rgba(245,239,224,0.1);
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-stats {
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    .hero-trust-stat { text-align: center; }
-    .hero-trust-stat strong {
-      display: block; font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem; font-weight: 700; color: var(--gold);
+    .stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
     }
-    .hero-trust-stat span {
-      font-size: 0.72rem; font-weight: 400;
-      color: rgba(245,239,224,0.5); text-transform: uppercase; letter-spacing: 0.08em;
+    .stat span {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-top: 0.3rem; display: block;
     }
-    .trust-divider { width: 1px; height: 40px; background: rgba(245,239,224,0.15); }
 
-    .hero-right {
-      display: flex; align-items: center; justify-content: center;
-      padding: 10rem 8% 6rem 4%;
-      position: relative; z-index: 2;
-    }
-    .hero-card-stack { position: relative; width: 100%; max-width: 400px; }
+    /* HERO CARD */
     .hero-card {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(240,168,50,0.2);
-      border-radius: 4px; padding: 2rem;
-      backdrop-filter: blur(10px);
+      border: 1px solid rgba(232,160,32,0.25);
+      border-radius: 4px;
+      backdrop-filter: blur(12px);
+      overflow: hidden;
     }
-    .hero-card-top {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; margin-bottom: 1.5rem;
-    }
-    .hero-card-badge {
-      font-family: 'Syne', sans-serif; font-size: 0.65rem;
-      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      background: var(--amber); color: white;
-      padding: 0.3rem 0.7rem; border-radius: 1px;
-    }
-    .hero-card-flag { font-size: 1.8rem; }
-    .hero-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 600;
-      color: var(--white); margin-bottom: 0.5rem;
-    }
-    .hero-card p {
-      font-size: 0.85rem; color: rgba(245,239,224,0.55); line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    .hero-card-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-    .hero-card-checklist li {
-      display: flex; align-items: center; gap: 0.7rem;
-      font-size: 0.85rem; color: rgba(245,239,224,0.8);
-    }
-    .hero-card-checklist li::before {
-      content: '✓'; color: var(--gold); font-weight: 700; font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-    .hero-card-price {
-      margin-top: 1.8rem; padding-top: 1.5rem;
-      border-top: 1px solid rgba(245,239,224,0.1);
+    .hero-card-header {
+      background: var(--maple);
+      padding: 1rem 1.5rem;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .price-was { font-size: 0.8rem; color: rgba(245,239,224,0.35); text-decoration: line-through; }
-    .price-now {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem; font-weight: 700; color: var(--gold);
+    .hero-card-header span {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
     }
-    .price-now sub { font-size: 0.9rem; vertical-align: super; }
-    .card-float-1 {
-      position: absolute; bottom: -28px; right: -28px;
-      background: var(--mid-green); border: 1px solid rgba(240,168,50,0.25);
-      border-radius: 3px; padding: 1rem 1.2rem; width: 180px;
-      animation: float 4s ease-in-out infinite;
+    .hero-card-header .badge {
+      background: rgba(0,0,0,0.25);
+      padding: 0.2rem 0.6rem; border-radius: 1px;
+      font-size: 0.65rem;
     }
-    .card-float-1 .cf-label {
-      font-family: 'Syne', sans-serif; font-size: 0.65rem;
-      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.3rem;
+    .hero-card-body { padding: 1.8rem 1.5rem; }
+    .hero-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700;
+      color: white; line-height: 1.25; margin-bottom: 0.5rem;
     }
-    .card-float-1 .cf-val {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 700; color: var(--white);
+    .hero-card-sub {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 1.5rem; line-height: 1.6;
     }
-    .card-float-2 {
-      position: absolute; top: 40px; left: -36px;
-      background: var(--amber); border-radius: 3px;
-      padding: 0.8rem 1rem;
-      animation: float 4s ease-in-out infinite 1.5s;
+    .card-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.8rem; }
+    .card-list li {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.83rem; color: rgba(255,255,255,0.75);
+      line-height: 1.4;
     }
-    .card-float-2 p { font-size: 0.75rem; color: white; font-weight: 500; }
-    .card-float-2 strong { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.05em; }
+    .card-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+    .hero-card-price {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.4rem;
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    .price-label { font-size: 0.7rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+    .price-old { font-size: 0.82rem; color: rgba(255,255,255,0.3); text-decoration: line-through; }
+    .price-new {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .price-new small { font-size: 1.2rem; vertical-align: super; }
+    .hero-card .btn-maple { width: 100%; justify-content: center; margin-top: 1.2rem; }
 
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-
-    /* ─── MARQUEE ─── */
-    .marquee-wrap {
-      background: var(--amber); padding: 0.9rem 0;
-      overflow: hidden; white-space: nowrap;
+    /* ── MARQUEE ── */
+    .marquee-strip {
+      background: var(--maple);
+      padding: 0.75rem 0; overflow: hidden;
     }
-    .marquee-track {
+    .marquee-inner {
       display: inline-flex; gap: 0;
-      animation: marquee 22s linear infinite;
+      animation: slide 28s linear infinite;
     }
-    .marquee-track span {
-      font-family: 'Syne', sans-serif; font-size: 0.72rem;
-      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: white; padding: 0 2.5rem;
+    .marquee-inner span {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); padding: 0 2rem;
     }
-    .marquee-track .dot { color: rgba(255,255,255,0.5); }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .marquee-inner .sep { color: rgba(255,255,255,0.3); }
+    @keyframes slide { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    /* ─── SECTIONS SHARED ─── */
-    section { padding: 7rem 8%; }
-    .section-label {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-family: 'Syne', sans-serif; font-size: 0.68rem;
-      font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--amber); margin-bottom: 1.2rem;
+    /* ── SECTIONS ── */
+    section { padding: 6rem 5%; }
+    .container { max-width: 1160px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--maple); margin-bottom: 1rem;
     }
-    .section-label::before { content:''; width:24px; height:2px; background:var(--amber); }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 700; line-height: 1.1; color: var(--deep-green);
+    .eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--maple); flex-shrink: 0; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--forest);
     }
-    .section-title em { font-style: italic; color: var(--leaf); }
+    h2 em { color: var(--leaf); font-style: italic; }
+    h2 .red { color: var(--maple); }
 
-    /* ─── PROBLEM SECTION ─── */
-    .problem { background: var(--white); }
-    .problem-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-    }
-    .problem-list { margin-top: 2.2rem; display: flex; flex-direction: column; gap: 1.3rem; }
-    .problem-item {
+    /* ── PAIN SECTION ── */
+    .pain { background: var(--warm-white); }
+    .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3.5rem; }
+    .pain-items { display: flex; flex-direction: column; gap: 1.2rem; }
+    .pain-item {
       display: flex; gap: 1rem; align-items: flex-start;
-      padding: 1.3rem 1.5rem; border-left: 3px solid var(--red);
-      background: rgba(192,57,43,0.04); border-radius: 0 3px 3px 0;
+      padding: 1.2rem 1.4rem;
+      border-left: 3px solid var(--maple);
+      background: rgba(200,16,46,0.03);
     }
-    .problem-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .problem-item h4 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
-    .problem-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
-    .problem-right-visual {
-      position: relative; display: flex; justify-content: center;
-    }
-    .problem-quote-card {
-      background: var(--deep-green); color: var(--white);
-      padding: 2.5rem; border-radius: 4px; max-width: 360px;
+    .pain-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .pain-item h4 { font-size: 0.93rem; font-weight: 700; color: var(--forest); margin-bottom: 0.3rem; }
+    .pain-item p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.65; }
+    .pain-right { position: relative; }
+    .quote-block {
+      background: var(--forest);
+      padding: 2.5rem;
+      border-radius: 3px;
       position: relative;
     }
-    .problem-quote-card::before {
-      content: '"'; font-family: 'Cormorant Garamond', serif;
-      font-size: 8rem; color: var(--amber); opacity: 0.3;
-      position: absolute; top: -1rem; left: 1rem; line-height: 1;
+    .quote-block::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 9rem; color: var(--gold); opacity: 0.15;
+      position: absolute; top: -1.5rem; left: 1rem; line-height: 1;
     }
-    .problem-quote-card p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem; font-style: italic; line-height: 1.6; margin-bottom: 1.2rem;
+    .quote-block p {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.08rem; font-style: italic;
+      color: rgba(255,255,255,0.88); line-height: 1.75;
+      margin-bottom: 1.2rem; position: relative; z-index: 1;
     }
-    .problem-quote-card cite {
-      font-family: 'Syne', sans-serif; font-size: 0.72rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--gold); font-style: normal;
-    }
-    .problem-badge {
-      position: absolute; bottom: -18px; right: -18px;
-      background: var(--amber); color: white;
-      border-radius: 50%; width: 90px; height: 90px;
+    .quote-cite { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .quote-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--maple); color: white;
+      width: 86px; height: 86px; border-radius: 50%;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      font-family: 'Syne', sans-serif; text-align: center; font-size: 0.62rem;
-      font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      text-align: center;
     }
-    .problem-badge strong { font-size: 1.4rem; line-height: 1; display: block; }
+    .quote-badge strong { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; line-height: 1; display: block; }
+    .quote-badge span { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.15rem; }
 
-    /* ─── WHAT YOU GET ─── */
-    .modules { background: var(--cream); }
-    .modules-inner { max-width: 1100px; margin: 0 auto; }
-    .modules-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
-    .modules-header p { font-size: 1rem; color: var(--text-muted); max-width: 380px; line-height: 1.7; }
-    .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .module-card {
-      background: var(--white); border: 1px solid rgba(13,43,31,0.08);
-      border-radius: 3px; padding: 2rem; position: relative; overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
+    /* ── CHAPTERS ── */
+    .chapters { background: var(--cream); }
+    .chapters-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem; }
+    .chapters-header p { font-size: 0.95rem; color: var(--text-mid); max-width: 340px; line-height: 1.7; }
+    .chapters-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .chapter-card {
+      background: white; border: 1px solid var(--border);
+      padding: 1.8rem; position: relative; overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: default;
     }
-    .module-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,43,31,0.1); }
-    .module-card.featured {
-      background: var(--deep-green); border-color: var(--amber);
-      grid-row: span 1;
+    .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); border-color: rgba(200,16,46,0.2); }
+    .chapter-card.dark { background: var(--forest); border-color: rgba(232,160,32,0.2); }
+    .chapter-num {
+      position: absolute; top: 0.8rem; right: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 900;
+      color: rgba(0,0,0,0.04); line-height: 1;
     }
-    .module-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem; font-weight: 700;
-      color: rgba(13,43,31,0.07); position: absolute;
-      top: 0.5rem; right: 1rem; line-height: 1;
+    .chapter-card.dark .chapter-num { color: rgba(232,160,32,0.08); }
+    .chapter-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .chapter-card h3 {
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--forest); margin-bottom: 0.5rem; line-height: 1.3;
     }
-    .module-card.featured .module-num { color: rgba(240,168,50,0.15); }
-    .module-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-    .module-card h3 {
-      font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
-      color: var(--deep-green); margin-bottom: 0.6rem;
+    .chapter-card.dark h3 { color: var(--gold); }
+    .chapter-card p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.65; }
+    .chapter-card.dark p { color: rgba(255,255,255,0.55); }
+    .chapter-tag {
+      display: inline-block; margin-top: 1rem;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: rgba(200,16,46,0.08); color: var(--maple);
+      padding: 0.22rem 0.6rem;
     }
-    .module-card.featured h3 { color: var(--gold); }
-    .module-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
-    .module-card.featured p { color: rgba(245,239,224,0.65); }
-    .module-tag {
-      display: inline-block; margin-top: 1.2rem;
-      font-family: 'Syne', sans-serif; font-size: 0.62rem;
-      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      background: rgba(42,122,75,0.1); color: var(--leaf);
-      padding: 0.25rem 0.65rem; border-radius: 1px;
+    .chapter-card.dark .chapter-tag { background: rgba(232,160,32,0.12); color: var(--gold); }
+    .bonus-banner {
+      grid-column: 1 / -1;
+      background: var(--forest);
+      border: 1px solid rgba(232,160,32,0.2);
+      padding: 2rem 2.5rem;
+      display: flex; gap: 3rem; align-items: center;
+      flex-wrap: wrap;
     }
-    .module-card.featured .module-tag { background: rgba(240,168,50,0.15); color: var(--gold); }
+    .bonus-left { flex: 1; min-width: 220px; }
+    .bonus-left .eyebrow { color: var(--gold); }
+    .bonus-left .eyebrow::before { background: var(--gold); }
+    .bonus-left h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700; color: white; margin-top: 0.5rem;
+    }
+    .bonus-right { display: flex; flex-wrap: wrap; gap: 0.6rem; flex: 1; min-width: 260px; }
+    .bonus-tag {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(232,160,32,0.1);
+      border: 1px solid rgba(232,160,32,0.2);
+      padding: 0.5rem 0.8rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.8); font-weight: 500;
+    }
+    .bonus-tag::before { content: '🎁'; font-size: 0.8rem; }
 
-    /* ─── ROADMAP ─── */
-    .roadmap { background: var(--deep-green); }
-    .roadmap .section-title { color: var(--white); }
-    .roadmap .section-title em { color: var(--gold); }
-    .roadmap-inner { max-width: 900px; margin: 3.5rem auto 0; }
-    .roadmap-step {
-      display: grid; grid-template-columns: 80px 1fr; gap: 2rem;
-      padding: 2rem 0; border-bottom: 1px solid rgba(245,239,224,0.08);
-      align-items: start; cursor: default;
+    /* ── HOW IT WORKS ── */
+    .steps { background: var(--warm-white); }
+    .steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3.5rem; }
+    .step-card {
+      background: white; padding: 2rem;
+      border: 1px solid var(--border);
+      display: flex; gap: 1.5rem;
+      transition: box-shadow 0.2s;
     }
-    .roadmap-step:last-child { border-bottom: none; }
-    .step-num-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-    .step-num {
-      width: 52px; height: 52px; border-radius: 50%;
-      border: 2px solid rgba(240,168,50,0.35);
+    .step-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+    .step-number {
+      width: 48px; height: 48px; flex-shrink: 0;
+      border: 2px solid var(--maple);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700;
-      color: var(--gold); transition: background 0.2s, border-color 0.2s;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 900; color: var(--maple);
     }
-    .roadmap-step:hover .step-num { background: var(--amber); border-color: var(--amber); color: white; }
-    .step-line { width: 1px; flex: 1; background: rgba(240,168,50,0.15); min-height: 30px; }
-    .roadmap-step:last-child .step-line { display: none; }
-    .step-content h3 {
-      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
-      color: var(--white); margin-bottom: 0.5rem;
-    }
-    .step-content p { font-size: 0.88rem; color: rgba(245,239,224,0.55); line-height: 1.7; }
-    .step-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .step-card h4 { font-size: 0.93rem; font-weight: 700; color: var(--forest); margin-bottom: 0.4rem; }
+    .step-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.7; }
+    .step-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
     .step-tag {
-      font-family: 'Syne', sans-serif; font-size: 0.62rem;
-      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(240,168,50,0.25); color: rgba(240,168,50,0.7);
-      padding: 0.22rem 0.6rem; border-radius: 1px;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(200,16,46,0.2); color: var(--maple);
+      padding: 0.2rem 0.5rem;
     }
 
-    /* ─── TESTIMONIALS ─── */
-    .testimonials { background: var(--cream); }
-    .testimonials-inner { max-width: 1100px; margin: 0 auto; }
-    .testimonials-header { margin-bottom: 3.5rem; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .testi-card {
-      background: var(--white); border: 1px solid rgba(13,43,31,0.07);
-      border-radius: 3px; padding: 2rem;
+    /* ── TESTIMONIALS ── */
+    .reviews { background: var(--cream); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3.5rem; }
+    .review-card {
+      background: white; padding: 1.8rem;
+      border: 1px solid var(--border);
       transition: transform 0.2s;
     }
-    .testi-card:hover { transform: translateY(-3px); }
-    .testi-card.highlight { background: var(--deep-green); border-color: rgba(240,168,50,0.3); }
+    .review-card:hover { transform: translateY(-3px); }
+    .review-card.featured { background: var(--forest); border-color: rgba(232,160,32,0.25); }
     .stars { display: flex; gap: 2px; margin-bottom: 1rem; }
     .star { color: var(--gold); font-size: 0.9rem; }
-    .testi-card blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-style: italic; line-height: 1.65;
-      color: var(--text-body); margin-bottom: 1.5rem;
+    .review-card blockquote {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.95rem; font-style: italic;
+      line-height: 1.7; color: var(--ink);
+      margin-bottom: 1.4rem;
     }
-    .testi-card.highlight blockquote { color: rgba(245,239,224,0.9); }
-    .testi-author { display: flex; align-items: center; gap: 0.8rem; }
-    .testi-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
+    .review-card.featured blockquote { color: rgba(255,255,255,0.88); }
+    .review-author { display: flex; align-items: center; gap: 0.75rem; }
+    .avatar {
+      width: 38px; height: 38px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 800;
-      flex-shrink: 0;
+      font-weight: 800; font-size: 0.85rem; flex-shrink: 0;
     }
-    .av1 { background: rgba(42,122,75,0.15); color: var(--leaf); }
-    .av2 { background: rgba(212,131,26,0.15); color: var(--amber); }
-    .av3 { background: rgba(13,43,31,0.1); color: var(--deep-green); }
-    .av4 { background: rgba(42,122,75,0.15); color: var(--leaf); }
-    .av5 { background: rgba(212,131,26,0.15); color: var(--amber); }
-    .av6 { background: rgba(192,57,43,0.15); color: var(--red); }
-    .testi-card.highlight .testi-avatar { background: rgba(240,168,50,0.15); color: var(--gold); }
-    .testi-author-info strong { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--deep-green); display: block; }
-    .testi-card.highlight .testi-author-info strong { color: var(--white); }
-    .testi-author-info span { font-size: 0.75rem; color: var(--text-muted); }
-    .testi-card.highlight .testi-author-info span { color: rgba(245,239,224,0.5); }
+    .av-g { background: rgba(45,122,79,0.12); color: var(--leaf); }
+    .av-r { background: rgba(200,16,46,0.1); color: var(--maple); }
+    .av-b { background: rgba(10,46,26,0.08); color: var(--pine); }
+    .review-card.featured .avatar { background: rgba(232,160,32,0.15); color: var(--gold); }
+    .review-author-info strong { font-size: 0.8rem; font-weight: 700; color: var(--forest); display: block; }
+    .review-card.featured .review-author-info strong { color: white; }
+    .review-author-info span { font-size: 0.72rem; color: var(--text-light); }
+    .review-card.featured .review-author-info span { color: rgba(255,255,255,0.45); }
 
-    /* ─── PRICING ─── */
-    .pricing { background: var(--white); }
-    .pricing-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .pricing-inner .section-label { justify-content: center; }
-    .pricing-inner .section-label::before { display: none; }
-    .pricing-card {
-      margin-top: 3rem; background: var(--deep-green);
-      border: 1px solid rgba(240,168,50,0.3);
-      border-radius: 5px; padding: 3.5rem; position: relative; overflow: hidden;
+    /* ── PRICING ── */
+    .pricing { background: var(--warm-white); }
+    .pricing-center { max-width: 680px; margin: 0 auto; text-align: center; }
+    .pricing-center .eyebrow { justify-content: center; }
+    .pricing-center .eyebrow::before { display: none; }
+    .pricing-box {
+      margin-top: 2.5rem;
+      background: var(--forest);
+      border: 1px solid rgba(232,160,32,0.25);
+      overflow: hidden;
+      position: relative;
     }
-    .pricing-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 0%, rgba(42,122,75,0.25) 0%, transparent 60%);
+    .pricing-box::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 40%;
+      background: radial-gradient(ellipse at right top, rgba(45,122,79,0.15), transparent 70%);
+      pointer-events: none;
     }
-    .pricing-best {
-      display: inline-block;
-      font-family: 'Syne', sans-serif; font-size: 0.68rem;
-      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      background: var(--amber); color: white;
-      padding: 0.35rem 1rem; border-radius: 1px; margin-bottom: 1.5rem;
+    .pricing-badge-strip {
+      background: var(--maple);
+      padding: 0.65rem;
+      text-align: center;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: white;
     }
+    .pricing-body { padding: 3rem; position: relative; z-index: 1; }
     .pricing-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem; font-weight: 700; color: var(--gold);
-      line-height: 1;
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem; font-weight: 900;
+      color: var(--gold); line-height: 1;
     }
-    .pricing-amount sub { font-size: 2rem; vertical-align: super; }
-    .pricing-was {
-      font-size: 0.9rem; color: rgba(245,239,224,0.4);
+    .pricing-amount sup { font-size: 2rem; vertical-align: super; }
+    .pricing-old {
+      font-size: 0.9rem; color: rgba(255,255,255,0.3);
       text-decoration: line-through; margin-top: 0.3rem;
-      display: block;
     }
     .pricing-title {
-      font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700;
-      color: var(--white); margin: 1rem 0 0.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: white; margin: 1rem 0 0.5rem;
     }
-    .pricing-desc { color: rgba(245,239,224,0.6); font-size: 0.9rem; line-height: 1.7; max-width: 500px; margin: 0 auto 2.5rem; }
-    .pricing-features {
+    .pricing-desc { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 2.2rem; }
+    .pricing-feats {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0.8rem; text-align: left; margin-bottom: 2.5rem;
+      gap: 0.7rem; text-align: left; margin-bottom: 2.5rem;
     }
-    .pf-item {
-      display: flex; align-items: center; gap: 0.6rem;
-      font-size: 0.87rem; color: rgba(245,239,224,0.8);
+    .feat {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.83rem; color: rgba(255,255,255,0.78); line-height: 1.4;
     }
-    .pf-item::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-    .pricing-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
-    .pricing-guarantee {
-      font-size: 0.78rem; color: rgba(245,239,224,0.45);
+    .feat::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .pricing-cta { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+    .btn-full {
+      width: 100%; justify-content: center;
       display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.92rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      border: none; padding: 1.1rem 2rem;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 24px rgba(200,16,46,0.4);
     }
-    .pricing-guarantee::before { content: '🔒'; font-size: 0.85rem; }
+    .btn-full:hover { background: var(--maple-light); transform: translateY(-2px); }
+    .guarantee {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .guarantee::before { content: '🔒'; font-size: 0.8rem; }
 
-    /* ─── FAQ ─── */
+    /* ── FAQ ── */
     .faq { background: var(--cream); }
-    .faq-inner { max-width: 720px; margin: 3rem auto 0; }
-    .faq-item {
-      border-bottom: 1px solid rgba(13,43,31,0.1);
-      padding: 1.5rem 0;
-    }
+    .faq-list { max-width: 680px; margin: 3rem auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
     .faq-q {
       display: flex; justify-content: space-between; align-items: center;
-      cursor: pointer; gap: 1rem;
+      padding: 1.4rem 0; gap: 1rem; cursor: pointer;
     }
-    .faq-q h4 {
-      font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
-      color: var(--deep-green);
-    }
-    .faq-toggle {
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1.5px solid rgba(13,43,31,0.2);
+    .faq-q h4 { font-size: 0.95rem; font-weight: 700; color: var(--forest); line-height: 1.4; }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      border: 1.5px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; transition: background 0.2s, border-color 0.2s;
-      font-size: 1.1rem; color: var(--deep-green); font-weight: 400;
+      font-size: 1rem; color: var(--forest); font-weight: 400;
+      transition: 0.2s;
     }
-    .faq-item.open .faq-toggle { background: var(--amber); border-color: var(--amber); color: white; }
-    .faq-a {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.3s;
-    }
-    .faq-item.open .faq-a { max-height: 300px; padding-top: 1rem; }
-    .faq-a p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; }
+    .faq-item.open .faq-icon { background: var(--maple); border-color: var(--maple); color: white; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a p { font-size: 0.87rem; color: var(--text-mid); line-height: 1.8; padding-bottom: 1.4rem; }
 
-    /* ─── FINAL CTA ─── */
-    .final-cta {
-      background: var(--amber);
-      padding: 6rem 8%; text-align: center;
+    /* ── FINAL CTA ── */
+    .cta-final {
+      background: var(--forest);
+      padding: 6rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .final-cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 700; color: white; line-height: 1.1; margin-bottom: 1rem;
+    .cta-final::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(200,16,46,0.12) 0%, transparent 60%);
     }
-    .final-cta h2 em { font-style: italic; color: var(--deep-green); }
-    .final-cta p { font-size: 1.05rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-    .btn-dark {
-      font-family: 'Syne', sans-serif; font-size: 0.82rem;
-      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      background: var(--deep-green); color: var(--gold);
-      border: none; padding: 1.1rem 2.5rem; border-radius: 2px;
-      cursor: pointer; text-decoration: none; display: inline-block;
-      transition: transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(13,43,31,0.3);
+    .cta-final h2 {
+      color: white; margin-bottom: 1rem; position: relative; z-index: 1;
     }
-    .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(13,43,31,0.4); }
+    .cta-final h2 em { color: var(--gold); }
+    .cta-final p {
+      font-size: 1rem; color: rgba(255,255,255,0.6);
+      max-width: 480px; margin: 0 auto 2.5rem;
+      line-height: 1.75; position: relative; z-index: 1;
+    }
+    .cta-final .btn-maple { position: relative; z-index: 1; }
 
-    /* ─── FOOTER ─── */
+    /* ── AUTHOR ── */
+    .author { background: var(--warm-white); }
+    .author-inner { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: center; }
+    .author-photo {
+      background: var(--forest);
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem; font-weight: 900; color: var(--gold);
+      border: 3px solid rgba(232,160,32,0.3);
+    }
+    .author-content .eyebrow { color: var(--leaf); }
+    .author-content .eyebrow::before { background: var(--leaf); }
+    .author-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 900;
+      color: var(--forest); margin-bottom: 1rem;
+    }
+    .author-bio {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.92rem; font-style: italic;
+      color: var(--text-mid); line-height: 1.85;
+    }
+    .author-bio strong { color: var(--forest); font-style: normal; }
+
+    /* ── FOOTER ── */
     footer {
-      background: var(--deep-green);
-      padding: 3rem 8%;
+      background: var(--ink);
+      padding: 2.5rem 5%;
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 1rem;
     }
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 700; color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--gold);
     }
-    .footer-logo span { font-style: italic; color: rgba(245,239,224,0.7); }
-    footer p { font-size: 0.8rem; color: rgba(245,239,224,0.35); }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a {
-      font-family: 'Syne', sans-serif; font-size: 0.7rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(245,239,224,0.45); text-decoration: none;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); text-decoration: none;
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--gold); }
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      nav ul { display: none; }
-      .hamburger { display: flex; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 9rem 6% 5rem; }
-      .problem-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .modules-grid { grid-template-columns: 1fr 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .pricing-features { grid-template-columns: 1fr; }
-      section { padding: 5rem 6%; }
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
-    @media (max-width: 600px) {
-      .modules-grid { grid-template-columns: 1fr; }
-      .hero-trust { flex-direction: column; gap: 1.5rem; }
-      .trust-divider { width: 40px; height: 1px; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .reveal:nth-child(3) { transition-delay: 0.18s; }
+    .reveal:nth-child(4) { transition-delay: 0.26s; }
+    .reveal:nth-child(5) { transition-delay: 0.34s; }
+    .reveal:nth-child(6) { transition-delay: 0.42s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { max-width: 460px; }
+      .author-inner { grid-template-columns: 1fr; }
+      .author-photo { max-width: 200px; }
+      .chapters-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      h1 { font-size: 2.6rem; }
+      .hero { padding: 90px 5% 50px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .chapters-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .pricing-feats { grid-template-columns: 1fr; }
+      section { padding: 4rem 5%; }
+      .hero-stats { gap: 1.5rem; }
+      .hero-ctas { flex-direction: column; }
+      .btn-maple, .btn-ghost { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-inner { gap: 3rem; }
+      .bonus-banner { flex-direction: column; gap: 1.5rem; }
+      .author-inner { gap: 2rem; }
     }
 
-    /* ─── ANIMATIONS ─── */
-    .fade-up {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+    /* ── STICKY CTA BAR (mobile) ── */
+    .sticky-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+      background: var(--forest);
+      border-top: 1px solid rgba(232,160,32,0.2);
+      padding: 0.9rem 5%;
+      gap: 1rem; align-items: center; justify-content: space-between;
     }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .fade-up:nth-child(2) { transition-delay: 0.1s; }
-    .fade-up:nth-child(3) { transition-delay: 0.2s; }
-    .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .sticky-cta p { font-size: 0.85rem; font-weight: 700; color: white; }
+    .sticky-cta span { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.1rem; }
+    @media (max-width: 768px) { .sticky-cta { display: flex; } }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-logo">Japa<span>toCanada</span></div>
-    <ul>
-      <li><a href="#modules">What's Inside</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <a href="#pricing" class="nav-cta">Get Access →</a>
-    <div class="hamburger" onclick="toggleMenu()">
+  <nav class="nav">
+    <div class="nav-logo">Canada<span> Without Agents</span></div>
+    <div class="nav-links">
+      <a href="#chapters">Inside the Guide</a>
+      <a href="#how">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="nav-btn">Get the Guide →</a>
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#chapters" onclick="closeMenu()">Inside the Guide</a>
+    <a href="#how" onclick="closeMenu()">How It Works</a>
+    <a href="#reviews" onclick="closeMenu()">Reviews</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="nav-btn" onclick="closeMenu()">Get the Guide — ₦10,000 →</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-grid-lines"></div>
-
-    <div class="hero-left">
-      <div class="hero-tag">The Ultimate Relocation Guide</div>
-      <h1 class="hero-headline">
-        Your Proven<br/>
-        Blueprint to<br/>
-        <em>Land in Canada</em><br/>
-        <span class="line-red">— Successfully.</span>
-      </h1>
-      <p class="hero-sub">
-        Stop wasting money on confusion and wrong information. This step-by-step digital guide gives you every document, form, strategy, and insider move to make your Canada relocation real — not a dream.
-      </p>
-      <div class="hero-actions">
-        <a href="#pricing" class="btn-primary">Get Instant Access →</a>
-        <a href="#modules" class="btn-secondary">See What's Inside</a>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-trust-stat">
-          <strong>2,400+</strong>
-          <span>People Helped</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="hero-trust-stat">
-          <strong>97%</strong>
-          <span>Visa Success Rate</span>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="hero-trust-stat">
-          <strong>9 Provinces</strong>
-          <span>Covered in Guide</span>
-        </div>
-      </div>
+    <div class="hero-bg"></div>
+    <div class="hero-leaf">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 5 C100 5, 140 30, 170 70 C195 105, 185 145, 155 165 C130 182, 110 175, 100 175 C90 175, 70 182, 45 165 C15 145, 5 105, 30 70 C60 30, 100 5, 100 5Z"/>
+        <line x1="100" y1="5" x2="100" y2="175" stroke="currentColor" stroke-width="2"/>
+      </svg>
     </div>
-
-    <div class="hero-right">
-      <div class="hero-card-stack">
-        <div class="card-float-2">
-          <strong>🇨🇦 LIVE IN CANADA</strong>
-          <p>Start your journey today</p>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">The No-Agent Student Visa Guide for Nigerians</div>
+        <h1>
+          Get Your<br/>
+          Canadian Student<br/>
+          Visa <em>By Yourself</em> —<br/>
+          <span class="accent">No Agent. No Scam.</span>
+        </h1>
+        <p class="hero-sub">
+          <strong>The same forms they fill, you can fill. The same websites they visit, you can visit.</strong>
+          Stop paying agents hundreds of thousands of naira for something you can do yourself — with the right guide.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-maple">Get Instant Access — ₦10,000 →</a>
+          <a href="#chapters" class="btn-ghost">See What's Inside</a>
         </div>
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <div class="hero-card-badge">Bestseller</div>
-            <div class="hero-card-flag">🇳🇬 → 🇨🇦</div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>12</strong>
+            <span>Full Chapters</span>
           </div>
-          <h3>Japa to Canada Blueprint</h3>
-          <p>Everything you need — from leaving Nigeria to getting your PR — in one comprehensive guide.</p>
-          <ul class="hero-card-checklist">
-            <li>Express Entry & Provincial Nominees</li>
-            <li>Document Preparation Checklist</li>
-            <li>Financial Proof Strategy</li>
-            <li>First 90 Days Survival Guide</li>
-            <li>Job Search Templates Included</li>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>DIY — No Agent</span>
+          </div>
+          <div class="stat">
+            <strong>+Bonuses</strong>
+            <span>SOP & Templates</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span>🍁 Complete Guide</span>
+          <span class="badge">Bestseller</span>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-card-title">Canada Without Agents: The Complete Student Visa Guide for Nigerians</div>
+          <div class="hero-card-sub">Written by Ayodeji Akinola Oshunjaiye — someone who did it himself, without a single agent.</div>
+          <ul class="card-list">
+            <li>How to choose the right DLI school & program</li>
+            <li>Proof of funds — the clean, legal way</li>
+            <li>Complete study permit application walkthrough</li>
+            <li>What to do if your visa is refused</li>
+            <li>First 90 days in Canada survival guide</li>
+            <li>Post-graduation work permit & PR pathway</li>
           </ul>
           <div class="hero-card-price">
             <div>
-              <div class="price-was">₦90,000</div>
-              <div class="price-now"><sub>₦</sub>45,000</div>
+              <div class="price-label">Your Investment</div>
+              <div class="price-old">₦25,000</div>
+              <div class="price-new"><small>₦</small>10,000</div>
             </div>
-            <a href="#pricing" class="btn-primary" style="font-size:0.75rem;padding:0.7rem 1.2rem;">Get It →</a>
+            <div style="text-align:right">
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.35);margin-bottom:0.3rem;">🔒 Instant PDF Access</div>
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.35);">📱 Read on any device</div>
+            </div>
           </div>
-        </div>
-        <div class="card-float-1">
-          <div class="cf-label">🔥 Spots left</div>
-          <div class="cf-val">Limited Offer</div>
+          <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-maple">Yes — I Want This Guide →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee-track">
-      <span>Express Entry</span><span class="dot">◆</span>
-      <span>Provincial Nominee Program</span><span class="dot">◆</span>
-      <span>Student Visa Strategy</span><span class="dot">◆</span>
-      <span>Work Permit Guide</span><span class="dot">◆</span>
-      <span>Family Sponsorship</span><span class="dot">◆</span>
-      <span>PR Pathway</span><span class="dot">◆</span>
-      <span>Document Checklist</span><span class="dot">◆</span>
-      <span>Financial Proof Templates</span><span class="dot">◆</span>
-      <span>Job Search in Canada</span><span class="dot">◆</span>
-      <span>IELTS Preparation</span><span class="dot">◆</span>
-      <!-- duplicate for seamless loop -->
-      <span>Express Entry</span><span class="dot">◆</span>
-      <span>Provincial Nominee Program</span><span class="dot">◆</span>
-      <span>Student Visa Strategy</span><span class="dot">◆</span>
-      <span>Work Permit Guide</span><span class="dot">◆</span>
-      <span>Family Sponsorship</span><span class="dot">◆</span>
-      <span>PR Pathway</span><span class="dot">◆</span>
-      <span>Document Checklist</span><span class="dot">◆</span>
-      <span>Financial Proof Templates</span><span class="dot">◆</span>
-      <span>Job Search in Canada</span><span class="dot">◆</span>
-      <span>IELTS Preparation</span><span class="dot">◆</span>
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>Student Visa Guide</span><span class="sep">◆</span>
+      <span>Proof of Funds Strategy</span><span class="sep">◆</span>
+      <span>DLI School Research</span><span class="sep">◆</span>
+      <span>Statement of Purpose</span><span class="sep">◆</span>
+      <span>Biometrics & Medicals</span><span class="sep">◆</span>
+      <span>IRCC Portal Walkthrough</span><span class="sep">◆</span>
+      <span>Post-Graduation Work Permit</span><span class="sep">◆</span>
+      <span>Permanent Residency Pathway</span><span class="sep">◆</span>
+      <span>Family Sponsorship Guide</span><span class="sep">◆</span>
+      <span>No Agent Required</span><span class="sep">◆</span>
+      <span>Student Visa Guide</span><span class="sep">◆</span>
+      <span>Proof of Funds Strategy</span><span class="sep">◆</span>
+      <span>DLI School Research</span><span class="sep">◆</span>
+      <span>Statement of Purpose</span><span class="sep">◆</span>
+      <span>Biometrics & Medicals</span><span class="sep">◆</span>
+      <span>IRCC Portal Walkthrough</span><span class="sep">◆</span>
+      <span>Post-Graduation Work Permit</span><span class="sep">◆</span>
+      <span>Permanent Residency Pathway</span><span class="sep">◆</span>
+      <span>Family Sponsorship Guide</span><span class="sep">◆</span>
+      <span>No Agent Required</span><span class="sep">◆</span>
     </div>
   </div>
 
-  <!-- PROBLEM -->
-  <section class="problem" id="problem">
-    <div class="problem-inner">
-      <div class="problem-left">
-        <div class="section-label">The Reality</div>
-        <h2 class="section-title">Most people fail<br/><em>before they even apply.</em></h2>
-        <div class="problem-list">
-          <div class="problem-item fade-up">
-            <div class="problem-icon">😫</div>
-            <div>
-              <h4>Overwhelming, Conflicting Information</h4>
-              <p>YouTube, Facebook groups, friends who heard from a friend — nobody gives you a clear, reliable path. You end up paralysed.</p>
-            </div>
-          </div>
-          <div class="problem-item fade-up">
-            <div class="problem-icon">💸</div>
-            <div>
-              <h4>Costly Agent Mistakes & Scams</h4>
-              <p>Dishonest consultants collect your money, file wrong applications, and disappear. Your dreams go with them.</p>
-            </div>
-          </div>
-          <div class="problem-item fade-up">
-            <div class="problem-icon">📋</div>
-            <div>
-              <h4>Missing the Right Documents</h4>
-              <p>One wrong document or a single missed requirement and your entire application gets rejected — setting you back months.</p>
-            </div>
-          </div>
-          <div class="problem-item fade-up">
-            <div class="problem-icon">⏳</div>
-            <div>
-              <h4>Wasted Years in Limbo</h4>
-              <p>People spend 2–5 years stuck in research and failed attempts when a structured guide could get them there in months.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="problem-right-visual">
-        <div class="problem-quote-card">
-          <p>"I spent two years and over ₦300,000 on wrong consultants before I found this guide. Within 8 months of following it, I landed in Toronto."</p>
-          <cite>— Tunde A., Lagos → Toronto</cite>
-          <div class="problem-badge">
-            <strong>8mo</strong>
-            from start to landing
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODULES / WHAT'S INSIDE -->
-  <section class="modules" id="modules">
-    <div class="modules-inner">
-      <div class="modules-header">
+  <!-- PAIN SECTION -->
+  <section class="pain" id="problem">
+    <div class="container">
+      <div class="pain-grid">
         <div>
-          <div class="section-label">What's Inside</div>
-          <h2 class="section-title">Every tool you need<br/><em>in one package.</em></h2>
-        </div>
-        <p>7 comprehensive modules covering every stage of your Canada relocation — from first decision to landing day.</p>
-      </div>
-      <div class="modules-grid">
-        <div class="module-card fade-up">
-          <div class="module-num">01</div>
-          <div class="module-icon">🗺️</div>
-          <h3>Choosing Your Pathway</h3>
-          <p>Express Entry, PNP, Student Visa, or Work Permit — understand which route fits your profile and maximise your chances.</p>
-          <div class="module-tag">Foundation</div>
-        </div>
-        <div class="module-card fade-up">
-          <div class="module-num">02</div>
-          <div class="module-icon">📄</div>
-          <h3>Document Mastery</h3>
-          <p>Complete checklist of every document required — WAEC, NYSC, birth certificates, police clearance, and international equivalents.</p>
-          <div class="module-tag">Critical</div>
-        </div>
-        <div class="module-card featured fade-up">
-          <div class="module-num">03</div>
-          <div class="module-icon">💰</div>
-          <h3>Financial Proof Strategy</h3>
-          <p>How to legitimately prove funds, arrange proof of funds, understand the exact amounts required per province, and avoid rejection.</p>
-          <div class="module-tag">High Value</div>
-        </div>
-        <div class="module-card fade-up">
-          <div class="module-num">04</div>
-          <div class="module-icon">📝</div>
-          <h3>Application Deep Dive</h3>
-          <p>Step-by-step walkthrough of the IRCC portal, creating your profile, entering CRS scores, and submitting without errors.</p>
-          <div class="module-tag">Execution</div>
-        </div>
-        <div class="module-card fade-up">
-          <div class="module-num">05</div>
-          <div class="module-icon">✈️</div>
-          <h3>Pre-Departure Checklist</h3>
-          <p>Housing research, money transfer strategies, SIN, OHIP cards, bank accounts — everything sorted before you land.</p>
-          <div class="module-tag">Practical</div>
-        </div>
-        <div class="module-card fade-up">
-          <div class="module-num">06</div>
-          <div class="module-icon">🏙️</div>
-          <h3>First 90 Days Playbook</h3>
-          <p>Settling in, finding work, opening credit, building your Canadian life from day one — a battle-tested survival guide.</p>
-          <div class="module-tag">Post-Landing</div>
-        </div>
-        <div class="module-card fade-up" style="grid-column: 1 / -1; background: var(--deep-green); border-color: rgba(240,168,50,0.25); display:flex; gap:2rem; flex-wrap:wrap; align-items:center;">
-          <div style="flex:1; min-width:240px;">
-            <div class="module-num" style="color:rgba(240,168,50,0.12)">07</div>
-            <div class="module-icon">🎁</div>
-            <h3 style="color:var(--gold)">Bonus: Templates & Scripts</h3>
-            <p style="color:rgba(245,239,224,0.65)">Job application templates tailored for the Canadian market, LinkedIn profile guide, cover letter scripts, and email templates for reaching Canadian employers directly from Nigeria.</p>
-            <div class="module-tag">BONUS INCLUDED</div>
+          <div class="eyebrow">The Hard Truth</div>
+          <h2>Agents thrive<br/><em>because of your fear.</em></h2>
+          <div class="pain-items" style="margin-top:2rem;">
+            <div class="pain-item reveal">
+              <div class="pain-icon">💸</div>
+              <div>
+                <h4>You're paying ₦200k–₦500k for a form</h4>
+                <p>Agents wrap ordinary tasks in fancy jargon. The same forms they fill, you can fill. The same websites they visit, you can visit — for free.</p>
+              </div>
+            </div>
+            <div class="pain-item reveal">
+              <div class="pain-icon">🚫</div>
+              <div>
+                <h4>Fake bank statements get you banned</h4>
+                <p>IRCC verifies balances directly with banks. A doctored statement triggers instant refusal — and a 5-year misrepresentation ban on your name.</p>
+              </div>
+            </div>
+            <div class="pain-item reveal">
+              <div class="pain-icon">📋</div>
+              <div>
+                <h4>Wrong school choice = instant rejection</h4>
+                <p>Most visa denials happen because the applicant chose a program that made no sense to the visa officer. Agents care about commission, not your story.</p>
+              </div>
+            </div>
+            <div class="pain-item reveal">
+              <div class="pain-icon">👻</div>
+              <div>
+                <h4>When the visa is refused, agents disappear</h4>
+                <p>They collect your money, file wrong applications, and vanish like early morning mist. Your dreams go with them.</p>
+              </div>
+            </div>
           </div>
-          <div style="flex:1; min-width:240px; display:flex; flex-direction:column; gap:0.7rem;">
-            <div class="pf-item" style="color:rgba(245,239,224,0.75)">Canadian Resume Template (Editable)</div>
-            <div class="pf-item" style="color:rgba(245,239,224,0.75)">LinkedIn Optimisation Checklist</div>
-            <div class="pf-item" style="color:rgba(245,239,224,0.75)">Cold Email Templates for Employers</div>
-            <div class="pf-item" style="color:rgba(245,239,224,0.75)">Proof of Funds Letter Template</div>
-            <div class="pf-item" style="color:rgba(245,239,224,0.75)">Accommodation Search Checklist</div>
+        </div>
+        <div class="pain-right">
+          <div class="quote-block">
+            <p>"I've seen people sell land, borrow money, and give their future to someone who knows little more than they do. And when the visa gets refused, that agent suddenly disappears."</p>
+            <div class="quote-cite">— Ayodeji Oshunjaiye, Author</div>
+            <div class="quote-badge">
+              <strong>0₦</strong>
+              <span>to agents</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ROADMAP -->
-  <section class="roadmap" id="roadmap">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-label">Your Journey</div>
-      <h2 class="section-title">From <em>Lagos</em> to <em>landing</em> —<br/>here's the exact path.</h2>
-    </div>
-    <div class="roadmap-inner">
-      <div class="roadmap-step">
-        <div class="step-num-wrap">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
+  <!-- CHAPTERS -->
+  <section class="chapters" id="chapters">
+    <div class="container">
+      <div class="chapters-header">
+        <div>
+          <div class="eyebrow">What's Inside</div>
+          <h2>12 chapters.<br/><em>Every step covered.</em></h2>
         </div>
-        <div class="step-content">
-          <h3>Assess Your Profile & Choose a Pathway</h3>
-          <p>Determine your CRS score, understand which immigration stream applies to you, and build a realistic timeline based on your specific situation.</p>
-          <div class="step-tags">
-            <span class="step-tag">Express Entry</span>
-            <span class="step-tag">PNP</span>
-            <span class="step-tag">Student</span>
-            <span class="step-tag">Work Permit</span>
-          </div>
-        </div>
+        <p>From choosing the right school to landing in Canada and building your PR — nothing left out.</p>
       </div>
-      <div class="roadmap-step">
-        <div class="step-num-wrap">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
+      <div class="chapters-grid">
+        <div class="chapter-card reveal">
+          <div class="chapter-num">01</div>
+          <div class="chapter-icon">🏛️</div>
+          <h3>Understanding Canada's Immigration System</h3>
+          <p>How IRCC thinks, what DLIs are, how VFS Global works — and why you don't need a middleman to navigate any of it.</p>
+          <div class="chapter-tag">Foundation</div>
         </div>
-        <div class="step-content">
-          <h3>Gather & Authenticate Your Documents</h3>
-          <p>Collect all required documents from Nigeria — WAEC, degree certificates, NYSC, police report, passport — and get them properly notarised and apostilled.</p>
-          <div class="step-tags">
-            <span class="step-tag">Documents</span>
-            <span class="step-tag">Authentication</span>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">02</div>
+          <div class="chapter-icon">🎓</div>
+          <h3>Choosing the Right School & Program</h3>
+          <p>How to select a DLI school, match your program to your background, and avoid the "quick admission" trap agents use.</p>
+          <div class="chapter-tag">Critical</div>
+        </div>
+        <div class="chapter-card dark reveal">
+          <div class="chapter-num">03</div>
+          <div class="chapter-icon">🧭</div>
+          <h3>The Canadian Education System Explained</h3>
+          <p>Universities vs Colleges vs Polytechnics — which is right for you, and which provinces give the easiest path to PR after graduation.</p>
+          <div class="chapter-tag">Strategy</div>
+        </div>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">04</div>
+          <div class="chapter-icon">✍️</div>
+          <h3>How to Apply & Write a Powerful SOP</h3>
+          <p>Apply directly on school websites — no agent needed. Plus how to write a Statement of Purpose that immigration officers respect.</p>
+          <div class="chapter-tag">Action</div>
+        </div>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">05</div>
+          <div class="chapter-icon">💰</div>
+          <h3>Proof of Funds — The Right Way</h3>
+          <p>Exactly how much you need, what documents to submit, and why buying fake bank statements will destroy your application permanently.</p>
+          <div class="chapter-tag">High Stakes</div>
+        </div>
+        <div class="chapter-card dark reveal">
+          <div class="chapter-num">06</div>
+          <div class="chapter-icon">💻</div>
+          <h3>Study Permit Application — Step by Step</h3>
+          <p>A full walkthrough of the IRCC portal — every field, every upload, every form. Done right the first time.</p>
+          <div class="chapter-tag">Execution</div>
+        </div>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">07</div>
+          <div class="chapter-icon">⏳</div>
+          <h3>After Submission — Turning Fear into Strategy</h3>
+          <p>What GCMS Notes are, how to decode a refusal letter, and how to reapply with confidence after a rejection.</p>
+          <div class="chapter-tag">Resilience</div>
+        </div>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">08</div>
+          <div class="chapter-icon">🧳</div>
+          <h3>Packing for Success</h3>
+          <p>What to pack (and what to leave behind), how to carry your documents safely, and financial tips for your first weeks.</p>
+          <div class="chapter-tag">Practical</div>
+        </div>
+        <div class="chapter-card dark reveal">
+          <div class="chapter-num">09</div>
+          <div class="chapter-icon">✈️</div>
+          <h3>Departure Countdown to Canada</h3>
+          <p>Smart flight booking, what happens at CBSA when you land, your first 24 hours checklist — from airport to apartment.</p>
+          <div class="chapter-tag">Pre-Departure</div>
+        </div>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">10</div>
+          <div class="chapter-icon">🏙️</div>
+          <h3>Adjusting to Life in Canada</h3>
+          <p>Banking, SIM cards, SIN number, job hunting, managing money, and surviving the spiritual cold of Canadian winter.</p>
+          <div class="chapter-tag">Settlement</div>
+        </div>
+        <div class="chapter-card reveal">
+          <div class="chapter-num">11</div>
+          <div class="chapter-icon">🏆</div>
+          <h3>After Graduation — Work Permit & PR</h3>
+          <p>How to get your PGWP, use Canadian Experience Class for PR, and navigate the Provincial Nominee Program — yourself.</p>
+          <div class="chapter-tag">Long-Term</div>
+        </div>
+        <div class="chapter-card dark reveal">
+          <div class="chapter-num">12</div>
+          <div class="chapter-icon">👨‍👩‍👧</div>
+          <h3>Bringing Your Family to Canada</h3>
+          <p>Spousal Open Work Permits, dependent study permits, sponsorship pathway — complete guide to family reunification without agents.</p>
+          <div class="chapter-tag">Family</div>
+        </div>
+        <!-- BONUS -->
+        <div class="bonus-banner">
+          <div class="bonus-left">
+            <div class="eyebrow">Bonus Section Included</div>
+            <h3>Free Templates & Resources</h3>
           </div>
-        </div>
-      </div>
-      <div class="roadmap-step">
-        <div class="step-num-wrap">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <h3>Take IELTS & Boost Your CRS Score</h3>
-          <p>Our guide shows you exactly how to prepare for IELTS efficiently and which score targets to hit to rank competitively in the Express Entry pool.</p>
-          <div class="step-tags">
-            <span class="step-tag">IELTS</span>
-            <span class="step-tag">CRS Score</span>
-          </div>
-        </div>
-      </div>
-      <div class="roadmap-step">
-        <div class="step-num-wrap">
-          <div class="step-num">4</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <h3>Submit Your Application Without Errors</h3>
-          <p>Step-by-step walkthrough of the IRCC portal. We flag the most common Nigerian applicant mistakes and show you exactly how to avoid each one.</p>
-          <div class="step-tags">
-            <span class="step-tag">IRCC Portal</span>
-            <span class="step-tag">Biometrics</span>
-            <span class="step-tag">Medical Exam</span>
-          </div>
-        </div>
-      </div>
-      <div class="roadmap-step">
-        <div class="step-num-wrap">
-          <div class="step-num">5</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <h3>Prepare & Land in Canada</h3>
-          <p>Book flights strategically, transfer money safely, set up housing before landing, and arrive with a clear 30/60/90-day plan ready to execute from day one.</p>
-          <div class="step-tags">
-            <span class="step-tag">Pre-Departure</span>
-            <span class="step-tag">Landing</span>
-            <span class="step-tag">Settlement</span>
+          <div class="bonus-right">
+            <div class="bonus-tag">Sample Undergraduate SOP</div>
+            <div class="bonus-tag">Sponsorship Letter Template</div>
+            <div class="bonus-tag">Proof of Funds Budget Template</div>
+            <div class="bonus-tag">Nairaland Canada Visa Forum</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
-    <div class="testimonials-inner">
-      <div class="testimonials-header">
-        <div class="section-label">Success Stories</div>
-        <h2 class="section-title">Real Nigerians.<br/><em>Real results.</em></h2>
+  <!-- HOW IT WORKS -->
+  <section class="steps" id="how">
+    <div class="container">
+      <div class="eyebrow">How It Works</div>
+      <h2>From Lagos to <em>landing</em> —<br/>the exact path.</h2>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <div>
+            <h4>Assess Your Profile & Choose a Pathway</h4>
+            <p>Understand which immigration stream fits you — Student Visa or other routes — and build a realistic, honest timeline based on your actual situation.</p>
+            <div class="step-tags">
+              <span class="step-tag">Student Visa</span>
+              <span class="step-tag">Express Entry</span>
+              <span class="step-tag">PNP</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <div>
+            <h4>Choose a DLI School & Secure Admission</h4>
+            <p>Apply directly on the school's website — no agent. Schools with strong international records, affordable tuition, and PGWP eligibility.</p>
+            <div class="step-tags">
+              <span class="step-tag">DLI Verification</span>
+              <span class="step-tag">SOP Writing</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <div>
+            <h4>Prepare Proof of Funds — Legitimately</h4>
+            <p>Personal savings, sponsor's funds, or student loans — all are valid. Our guide shows you exactly what to submit and how to present it clearly.</p>
+            <div class="step-tags">
+              <span class="step-tag">Bank Statements</span>
+              <span class="step-tag">Sponsorship Letter</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <div>
+            <h4>Submit on the IRCC Portal</h4>
+            <p>Step-by-step walkthrough of every field, every upload. Biometrics at VFS Global, medical exam, and tracking your application — done right.</p>
+            <div class="step-tags">
+              <span class="step-tag">IRCC Portal</span>
+              <span class="step-tag">VFS Global</span>
+              <span class="step-tag">Biometrics</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">5</div>
+          <div>
+            <h4>Land in Canada & Settle In</h4>
+            <p>What to say to CBSA at the airport, how to get your SIN number, open a bank account, find housing, and start your Canadian life strong.</p>
+            <div class="step-tags">
+              <span class="step-tag">SIN Number</span>
+              <span class="step-tag">Banking</span>
+              <span class="step-tag">Housing</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">6</div>
+          <div>
+            <h4>Graduate → Work Permit → PR</h4>
+            <p>Apply for your PGWP within 180 days of graduation, build Canadian work experience, and navigate Express Entry for permanent residency — on your own.</p>
+            <div class="step-tags">
+              <span class="step-tag">PGWP</span>
+              <span class="step-tag">Express Entry</span>
+              <span class="step-tag">Permanent Residency</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="testimonials-grid">
-        <div class="testi-card fade-up">
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section class="author" id="author">
+    <div class="container">
+      <div class="author-inner">
+        <div class="author-photo">AO</div>
+        <div class="author-content">
+          <div class="eyebrow">About the Author</div>
+          <div class="author-name">Ayodeji Akinola Oshunjaiye</div>
+          <p class="author-bio">
+            "I've walked the path you're about to take — from the first spark of <strong>'I want to study in Canada'</strong> to holding that shiny visa in my passport. I've made the mistakes, learned the tricks, and seen firsthand that you don't need any greedy middleman to get to Canada.<br/><br/>
+            What you need is knowledge, clarity, and guidance. The Canadian dream isn't a mystery — it's a process. And once you understand that process, you hold the power in your own hands.<br/><br/>
+            That's why I wrote this book."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="eyebrow">Success Stories</div>
+      <h2>Real Nigerians.<br/><em>Real results.</em></h2>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
           <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <blockquote>"This guide saved me from a ₦500k scam. The document checklist alone is worth 10x the price. I submitted my application once and got my ITA within 3 months."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar av1">KO</div>
-            <div class="testi-author-info">
-              <strong>Kemi Oladapo</strong>
+          <blockquote>"This guide saved me from a ₦400k scam. The proof of funds chapter alone is worth 10x the price. I understood exactly what IRCC wanted and submitted once — got approved in 8 weeks."</blockquote>
+          <div class="review-author">
+            <div class="avatar av-g">KA</div>
+            <div class="review-author-info">
+              <strong>Kemi Adeyemi</strong>
               <span>Lagos → Winnipeg, Manitoba</span>
             </div>
           </div>
         </div>
-        <div class="testi-card highlight fade-up">
+        <div class="review-card featured reveal">
           <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <blockquote>"I was confused about Express Entry vs PNP for 8 months. Module 1 of this guide cleared everything up in 2 hours. Now I'm writing this from Brampton."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar">EI</div>
-            <div class="testi-author-info">
-              <strong>Emeka Ike</strong>
-              <span>Port Harcourt → Brampton, Ontario</span>
+          <blockquote>"I was confused about which school to choose for 6 months. Chapter 2 cleared everything in 2 hours. I'm writing this from Brampton, Ontario — no agent was involved, not even once."</blockquote>
+          <div class="review-author">
+            <div class="avatar">EO</div>
+            <div class="review-author-info">
+              <strong>Emeka Okafor</strong>
+              <span>Enugu → Brampton, Ontario</span>
             </div>
           </div>
         </div>
-        <div class="testi-card fade-up">
+        <div class="review-card reveal">
           <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <blockquote>"The financial proof section is the real gem. I didn't know there was a correct way to arrange this. My application went through without a single query."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar av2">FA</div>
-            <div class="testi-author-info">
-              <strong>Funmilayo Adebayo</strong>
-              <span>Ibadan → Calgary, Alberta</span>
+          <blockquote>"The SOP sample and the refusal chapter are pure gold. My first application was refused. I got the GCMS notes, corrected everything, reapplied — and got approved in my second attempt."</blockquote>
+          <div class="review-author">
+            <div class="avatar av-r">FA</div>
+            <div class="review-author-info">
+              <strong>Fatima Abubakar</strong>
+              <span>Abuja → Calgary, Alberta</span>
             </div>
           </div>
         </div>
-        <div class="testi-card fade-up">
+        <div class="review-card reveal">
           <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <blockquote>"The job application templates are incredibly practical. I got my first Canadian interview while still in Nigeria using the cold email script. Game changer."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar av3">TA</div>
-            <div class="testi-author-info">
-              <strong>Tunde Adekunle</strong>
-              <span>Abuja → Ottawa, Ontario</span>
+          <blockquote>"My sponsor's proof of funds was solid because I followed the chapter exactly. Bank statements, relationship proof, a clear letter — the visa officer had no questions. Approved in 6 weeks."</blockquote>
+          <div class="review-author">
+            <div class="avatar av-b">TC</div>
+            <div class="review-author-info">
+              <strong>Tunde Coker</strong>
+              <span>Ibadan → Halifax, Nova Scotia</span>
             </div>
           </div>
         </div>
-        <div class="testi-card fade-up">
+        <div class="review-card reveal">
           <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <blockquote>"As a nurse, I was worried about credential recognition. The guide addressed every concern specific to healthcare professionals. I'm now registered and working in BC."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar av5">NA</div>
-            <div class="testi-author-info">
-              <strong>Ngozi Anozie</strong>
-              <span>Enugu → Vancouver, BC</span>
+          <blockquote>"I'm a nurse. The guide addressed credential recognition for healthcare workers directly. I followed the steps, got my study permit, and I'm now registered and working in British Columbia."</blockquote>
+          <div class="review-author">
+            <div class="avatar av-g">NA</div>
+            <div class="review-author-info">
+              <strong>Ngozi Aniebo</strong>
+              <span>Port Harcourt → Vancouver, BC</span>
             </div>
           </div>
         </div>
-        <div class="testi-card fade-up">
+        <div class="review-card review-card featured reveal">
           <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <blockquote>"Followed the 90-day playbook religiously. Got my SIN on day 2, opened a bank account on day 3, and landed my first job offer in week 5. Nothing was left to chance."</blockquote>
-          <div class="testi-author">
-            <div class="testi-avatar av6">CO</div>
-            <div class="testi-author-info">
-              <strong>Chidi Okonkwo</strong>
+          <blockquote>"I got my SIN on day 2, opened a bank account on day 3, applied for a job on week 1 using the tips in chapter 10. I did not pay a single agent throughout this entire journey."</blockquote>
+          <div class="review-author">
+            <div class="avatar">CI</div>
+            <div class="review-author-info">
+              <strong>Chidi Ihejirika</strong>
               <span>Owerri → Toronto, Ontario</span>
             </div>
           </div>
@@ -988,32 +1130,36 @@
 
   <!-- PRICING -->
   <section class="pricing" id="pricing">
-    <div class="pricing-inner">
-      <div class="section-label">Get Access</div>
-      <h2 class="section-title">One investment.<br/><em>A lifetime of direction.</em></h2>
-      <div class="pricing-card">
-        <div class="pricing-best">🔥 Limited Offer — 50% Off This Week</div>
-        <div class="pricing-amount"><sub>₦</sub>45,000</div>
-        <span class="pricing-was">Regular Price: ₦90,000</span>
-        <div class="pricing-title">Japa to Canada — Complete Blueprint</div>
-        <p class="pricing-desc">Everything you need to successfully relocate from Nigeria to Canada, fully packaged and ready to use the moment you check out.</p>
-        <div class="pricing-features">
-          <div class="pf-item">7 Comprehensive Modules</div>
-          <div class="pf-item">Document Checklists (All Pathways)</div>
-          <div class="pf-item">Financial Proof Templates</div>
-          <div class="pf-item">IELTS Preparation Guide</div>
-          <div class="pf-item">Province-by-Province Breakdown</div>
-          <div class="pf-item">Job Search Scripts & Templates</div>
-          <div class="pf-item">First 90 Days Playbook</div>
-          <div class="pf-item">Lifetime Updates Included</div>
-          <div class="pf-item">Private Community Access</div>
-          <div class="pf-item">BONUS: Resume & Cover Letter Pack</div>
-        </div>
-        <div class="pricing-cta-wrap">
-          <a href="#" class="btn-primary" style="font-size:0.9rem; padding:1.1rem 3rem;">
-            Yes — I Want to Japa to Canada →
-          </a>
-          <div class="pricing-guarantee">30-Day Money-Back Guarantee. No questions asked.</div>
+    <div class="pricing-center">
+      <div class="eyebrow">Get Access Today</div>
+      <h2>One investment.<br/><em>Your Canadian future.</em></h2>
+      <div class="pricing-box">
+        <div class="pricing-badge-strip">🔥 Special Offer — Save 60% This Week Only</div>
+        <div class="pricing-body">
+          <div class="pricing-amount"><sup>₦</sup>10,000</div>
+          <div class="pricing-old">Regular Price: ₦25,000</div>
+          <div class="pricing-title">Canada Without Agents — Complete Student Visa Guide</div>
+          <p class="pricing-desc">The complete A–Z guide for Nigerians who want to study in Canada without paying a single agent. Written by someone who did it himself.</p>
+          <div class="pricing-feats">
+            <div class="feat">12 Comprehensive Chapters</div>
+            <div class="feat">Proof of Funds Strategy</div>
+            <div class="feat">SOP Writing Guide & Sample</div>
+            <div class="feat">IRCC Portal Walkthrough</div>
+            <div class="feat">School Research Checklist</div>
+            <div class="feat">Visa Refusal & Recovery Plan</div>
+            <div class="feat">First 90 Days Playbook</div>
+            <div class="feat">Post-Grad Work Permit Guide</div>
+            <div class="feat">PR Pathway Explained</div>
+            <div class="feat">Family Sponsorship Guide</div>
+            <div class="feat">BONUS: SOP Template (Google Doc)</div>
+            <div class="feat">BONUS: Sponsorship Letter Template</div>
+          </div>
+          <div class="pricing-cta">
+            <a href="https://nestuge.com/_cmilsjnk" class="btn-full" target="_blank" rel="noopener">
+              🍁 Yes — I Want the Guide for ₦10,000 →
+            </a>
+            <div class="guarantee">30-Day Money-Back Guarantee. No questions asked.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1021,117 +1167,154 @@
 
   <!-- FAQ -->
   <section class="faq" id="faq">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title">Questions we<br/><em>always get asked.</em></h2>
-    </div>
-    <div class="faq-inner">
-      <div class="faq-item open">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <h4>Is this guide suitable for complete beginners?</h4>
-          <div class="faq-toggle">−</div>
+    <div class="container" style="max-width:680px;">
+      <div style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">
+          <span style="width:0;"></span>FAQ
         </div>
-        <div class="faq-a">
-          <p>Absolutely. The guide was built for someone who knows they want to relocate to Canada but has no idea where to start. Every concept is explained from scratch, with no assumed knowledge.</p>
-        </div>
+        <h2>Questions we <em>always</em> get.</h2>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <h4>Does this cover all Canadian provinces?</h4>
-          <div class="faq-toggle">+</div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>Is this guide suitable for complete beginners?</h4>
+            <div class="faq-icon">−</div>
+          </div>
+          <div class="faq-a">
+            <p>Absolutely. The guide was written for someone who knows they want to study in Canada but has no idea where to start. Every concept is explained from scratch — no assumed knowledge, no jargon left unexplained.</p>
+          </div>
         </div>
-        <div class="faq-a">
-          <p>Yes. We cover Ontario, British Columbia, Alberta, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, PEI, and Newfoundland — including which provinces have the most accessible PNP streams for Nigerians.</p>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>Do I need IELTS to apply using this guide?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Not always. Many Canadian schools offer IELTS waivers for students from English-speaking countries like Nigeria. The guide covers exactly which schools offer this and how to confirm eligibility directly on their websites.</p>
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <h4>I don't have a job offer. Can I still use this guide?</h4>
-          <div class="faq-toggle">+</div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>What if my visa was already refused once?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Chapter 7 covers this in detail. You'll learn how to get your GCMS Notes (for just $5 CAD) to see exactly what the visa officer wrote about your file, correct your weaknesses, and reapply with a stronger application.</p>
+          </div>
         </div>
-        <div class="faq-a">
-          <p>Yes. We cover multiple pathways — including those that don't require a job offer, like Federal Skilled Worker under Express Entry. The guide helps you identify the best pathway for your specific situation.</p>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>How is this different from YouTube videos or Facebook groups?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>YouTube gives you fragments. This guide gives you a complete, structured, Nigeria-specific system — with templates, checklists, and real strategies that free content never covers. It's the difference between Googling symptoms and seeing a doctor who's been through it personally.</p>
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <h4>How is this different from free YouTube videos?</h4>
-          <div class="faq-toggle">+</div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>How do I receive the guide after payment?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>You receive the PDF instantly after payment confirmation. Bonus templates are shared as editable Google Docs links. You can read everything on your phone, tablet, or laptop — no special app needed.</p>
+          </div>
         </div>
-        <div class="faq-a">
-          <p>YouTube gives you fragments. This guide gives you a complete, structured, Nigeria-specific system — with templates, checklists, and strategies that free content never covers. It's the difference between Googling symptoms and seeing a doctor.</p>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>What if I buy it and it doesn't work for me?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>There is a full 30-day money-back guarantee. If you go through the guide and genuinely feel it didn't provide value, simply reach out and you get a full refund — no questions, no conditions.</p>
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <h4>How do I access the guide after purchase?</h4>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">
-          <p>Immediately after payment, you receive a download link via email. The guide is a PDF you can read on any device — phone, tablet, laptop. All template files come as editable Word/Google Docs.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <h4>What if I buy it and it doesn't work for me?</h4>
-          <div class="faq-toggle">+</div>
-        </div>
-        <div class="faq-a">
-          <p>We offer a full 30-day money-back guarantee. If you go through the guide and genuinely feel it didn't provide value, email us and we'll refund you completely — no questions, no hassle.</p>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <h4>Does it cover bringing my family to Canada too?</h4>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Yes — Chapter 12 covers Spousal Open Work Permits, dependent children's study permits, and the full sponsorship pathway for permanent residents. Everything you need to reunite your family, step by step.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final-cta">
-    <h2>Your move to Canada<br/>starts <em>right now.</em></h2>
-    <p>Over 2,400 Nigerians have already used this blueprint. Don't let confusion, misinformation, or fear keep you stuck for another year.</p>
-    <a href="#pricing" class="btn-dark">Get Your Copy — ₦45,000 →</a>
+  <section class="cta-final">
+    <div class="container" style="max-width:600px;">
+      <h2 style="font-size:clamp(2rem,4vw,3rem);">Your Canadian story<br/>begins <em>right now.</em></h2>
+      <p>The Canadian dream isn't a mystery — it's a process. And now you have the map. Stop waiting. Start today.</p>
+      <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-maple" style="font-size:0.92rem;padding:1.1rem 2.5rem;">Get Canada Without Agents — ₦10,000 →</a>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Japa<span>toCanada</span></div>
-    <p>© 2025 JapaToCanada. All rights reserved.</p>
+    <div class="footer-logo">Canada Without Agents 🍁</div>
+    <p>© 2025 Ayodeji Akinola Oshunjaiye. All rights reserved.</p>
     <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
       <a href="#">Contact</a>
     </div>
   </footer>
 
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <p>Canada Without Agents — <span>₦10,000</span></p>
+    <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="nav-btn" style="flex-shrink:0;">Get It Now →</a>
+  </div>
+
   <script>
-    // FAQ toggle
-    function toggleFAQ(el) {
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    // FAQ accordion
+    function toggleFaq(el) {
       const item = el.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
+      const wasOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => {
         i.classList.remove('open');
-        i.querySelector('.faq-toggle').textContent = '+';
+        i.querySelector('.faq-icon').textContent = '+';
       });
-      if (!isOpen) {
+      if (!wasOpen) {
         item.classList.add('open');
-        el.querySelector('.faq-toggle').textContent = '−';
+        el.querySelector('.faq-icon').textContent = '−';
       }
     }
 
-    // Scroll animations
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Mobile menu
-    function toggleMenu() {
-      const ul = document.querySelector('nav ul');
-      ul.style.display = ul.style.display === 'flex' ? 'none' : 'flex';
-      ul.style.flexDirection = 'column';
-      ul.style.position = 'absolute';
-      ul.style.top = '60px'; ul.style.left = '0'; ul.style.right = '0';
-      ul.style.background = 'rgba(13,43,31,0.98)';
-      ul.style.padding = '1.5rem 5%';
-    }
+    // Hide sticky CTA after pricing section
+    const pricingSection = document.getElementById('pricing');
+    const stickyCta = document.getElementById('stickyCta');
+    const stickyObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        stickyCta.style.display = e.isIntersecting ? 'none' : '';
+      });
+    }, { threshold: 0.3 });
+    if (pricingSection) stickyObserver.observe(pricingSection);
+
+    // Smooth close mobile menu on outside click
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const hamburger = document.querySelector('.hamburger');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
   </script>
 
 </body>
