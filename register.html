@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Free — Canadian Student Visa Masterclass</title>
+  <meta name="description" content="Register for the free Canadian student visa masterclass. Watch instantly after registration."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --forest: #0B2A1A;
+      --pine:   #1A4A2E;
+      --leaf:   #2D7A4F;
+      --maple:  #C8102E;
+      --maple2: #E03050;
+      --gold:   #E8A020;
+      --cream:  #FAF7F0;
+      --white:  #FFFFFF;
+      --ink:    #0D0D0D;
+      --muted:  #6B6B6B;
+      --border: #E2E2DC;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* NAV */
+    nav {
+      background: var(--forest);
+      padding: 1rem 5%;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid rgba(232,160,32,0.15);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); }
+    .nav-logo span { color: rgba(255,255,255,0.6); font-style: italic; font-weight: 400; }
+
+    /* PROGRESS BAR */
+    .progress {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 5%;
+    }
+    .progress-inner { max-width: 560px; margin: 0 auto; display: flex; align-items: center; gap: 0; }
+    .step {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--muted); flex: 1;
+    }
+    .step.active { color: var(--maple); }
+    .step.done { color: var(--leaf); }
+    .step-dot {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800;
+      border: 2px solid var(--border); background: white; color: var(--muted);
+    }
+    .step.active .step-dot { border-color: var(--maple); background: var(--maple); color: white; }
+    .step.done .step-dot { border-color: var(--leaf); background: var(--leaf); color: white; }
+    .step-line { flex: 1; height: 2px; background: var(--border); margin: 0 0.3rem; }
+    .step-line.done { background: var(--leaf); }
+
+    /* MAIN LAYOUT */
+    .main {
+      flex: 1; padding: 3rem 5%;
+      display: flex; align-items: flex-start; justify-content: center; gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: white; border: 1px solid var(--border);
+      padding: 2.5rem; flex: 1; min-width: 300px; max-width: 480px;
+      position: relative;
+    }
+    .form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: var(--maple);
+    }
+    .form-eyebrow {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--maple); margin-bottom: 0.6rem;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 900;
+      color: var(--forest); line-height: 1.2; margin-bottom: 0.5rem;
+    }
+    .form-title em { color: var(--leaf); font-style: italic; }
+    .form-sub { font-size: 0.83rem; color: var(--muted); line-height: 1.65; margin-bottom: 2rem; }
+
+    .field { margin-bottom: 1.2rem; }
+    .field label {
+      display: block; font-size: 0.8rem; font-weight: 700;
+      color: var(--forest); margin-bottom: 0.45rem; letter-spacing: 0.02em;
+    }
+    .field label span { color: var(--maple); }
+    .field input {
+      width: 100%; padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border);
+      background: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem; color: var(--ink);
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+    .field input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(11,42,26,0.08); background: white; }
+    .field input::placeholder { color: #BABAB0; }
+    .field-hint { font-size: 0.72rem; color: var(--muted); margin-top: 0.35rem; }
+
+    .btn-submit {
+      width: 100%; padding: 1.1rem;
+      background: var(--maple); color: white;
+      border: none; border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      letter-spacing: 0.03em; text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(200,16,46,0.35);
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--maple2); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(200,16,46,0.45); }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit.loading { opacity: 0.7; cursor: not-allowed; }
+
+    .form-trust {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-size: 0.72rem; color: var(--muted); margin-top: 1rem; text-align: center;
+    }
+    .form-trust::before { content: '🔒'; font-size: 0.85rem; }
+
+    /* ERROR STATE */
+    .field input.error { border-color: var(--maple); background: rgba(200,16,46,0.03); }
+    .field-error { font-size: 0.72rem; color: var(--maple); margin-top: 0.35rem; display: none; }
+    .field input.error + .field-error { display: block; }
+
+    /* SUMMARY PANEL */
+    .summary {
+      width: 280px; flex-shrink: 0;
+    }
+    .summary-card {
+      background: var(--forest);
+      border: 1px solid rgba(232,160,32,0.2);
+      padding: 1.8rem; margin-bottom: 1rem;
+    }
+    .summary-badge {
+      display: inline-block; background: var(--maple);
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: white; padding: 0.25rem 0.6rem; margin-bottom: 1rem;
+    }
+    .summary-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: white;
+      margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .summary-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; line-height: 1.6; }
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .summary-list li {
+      display: flex; gap: 0.6rem; align-items: flex-start;
+      font-size: 0.78rem; color: rgba(255,255,255,0.75); line-height: 1.4;
+    }
+    .summary-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    .what-happens {
+      background: white; border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+    .what-happens h4 {
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--forest); margin-bottom: 1rem;
+    }
+    .step-mini { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.85rem; }
+    .step-mini:last-child { margin-bottom: 0; }
+    .step-mini-dot {
+      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+      background: var(--maple); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.62rem; font-weight: 800; margin-top: 0.05rem;
+    }
+    .step-mini p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .step-mini strong { color: var(--forest); }
+
+    /* SUCCESS STATE */
+    .success-state { display: none; text-align: center; padding: 2rem; }
+    .success-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+    .success-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 900; color: var(--forest); margin-bottom: 0.5rem;
+    }
+    .success-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .success-note {
+      background: rgba(45,122,79,0.08); border-left: 3px solid var(--leaf);
+      padding: 1rem 1.2rem; font-size: 0.83rem; color: var(--forest);
+      line-height: 1.65; text-align: left;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); padding: 1.5rem 5%;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    footer p { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .summary { width: 100%; }
+      .main { flex-direction: column; align-items: center; }
+      .form-card { max-width: 100%; }
+      .progress-inner { gap: 0.2rem; }
+      .step span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Canada<span> Without Agents</span></div>
+  </nav>
+
+  <!-- PROGRESS -->
+  <div class="progress">
+    <div class="progress-inner">
+      <div class="step active">
+        <div class="step-dot">1</div>
+        <span>Register</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <span>Confirm</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <span>Watch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- FORM -->
+    <div class="form-card">
+      <div id="formState">
+        <div class="form-eyebrow">Free Registration</div>
+        <div class="form-title">One step to<br/><em>watch the masterclass</em></div>
+        <p class="form-sub">Enter your details below. The masterclass link will be sent to you on WhatsApp.</p>
+
+        <form id="regForm" novalidate>
+          <div class="field">
+            <label>Full Name <span>*</span></label>
+            <input type="text" id="name" placeholder="e.g. Adebayo Okonkwo" autocomplete="name"/>
+            <div class="field-error">Please enter your full name</div>
+          </div>
+          <div class="field">
+            <label>Email Address <span>*</span></label>
+            <input type="email" id="email" placeholder="e.g. adebayo@gmail.com" autocomplete="email"/>
+            <div class="field-error">Please enter a valid email address</div>
+          </div>
+          <div class="field">
+            <label>WhatsApp Number <span>*</span></label>
+            <input type="tel" id="whatsapp" placeholder="e.g. 08012345678" autocomplete="tel"/>
+            <div class="field-hint">We'll send the masterclass link to this number</div>
+            <div class="field-error">Please enter your WhatsApp number</div>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            👉 Send Me the Free Masterclass →
+          </button>
+        </form>
+        <div class="form-trust">Your details are 100% safe. We never spam or share your information.</div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-state" id="successState">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">You're registered!</div>
+        <p class="success-sub">Thank you for signing up. You'll receive the masterclass link on WhatsApp shortly — usually within a few minutes.</p>
+        <div class="success-note">
+          📱 <strong>Check your WhatsApp</strong> — the link to watch the free masterclass will be sent to the number you provided. If you don't receive it within 15 minutes, check that your number is correct.
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY PANEL -->
+    <div class="summary">
+      <div class="summary-card">
+        <div class="summary-badge">🍁 Free Masterclass</div>
+        <div class="summary-title">How to Get Your Canadian Student Visa Without Paying a Single Agent</div>
+        <p class="summary-sub">A complete video guide built for Nigerians — covering every stage from school choice to visa approval.</p>
+        <ul class="summary-list">
+          <li>How to choose the right DLI school</li>
+          <li>Proof of funds — the honest way</li>
+          <li>How to write a winning SOP</li>
+          <li>Full IRCC portal walkthrough</li>
+          <li>What to do if you get refused</li>
+          <li>Post-graduation work permit & PR</li>
+        </ul>
+      </div>
+
+      <div class="what-happens">
+        <h4>What happens next?</h4>
+        <div class="step-mini">
+          <div class="step-mini-dot">1</div>
+          <p><strong>Submit your details</strong> — takes less than 30 seconds</p>
+        </div>
+        <div class="step-mini">
+          <div class="step-mini-dot">2</div>
+          <p><strong>We send the link</strong> to your WhatsApp number</p>
+        </div>
+        <div class="step-mini">
+          <div class="step-mini-dot">3</div>
+          <p><strong>Watch the full masterclass</strong> — free, at your own pace</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Canada Without Agents 🍁</div>
+    <p>© 2025 Ayodeji Akinola Oshunjaiye. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('regForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formState = document.getElementById('formState');
+    const successState = document.getElementById('successState');
+
+    function validate() {
+      let valid = true;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const whatsapp = document.getElementById('whatsapp');
+
+      // Name
+      if (!name.value.trim() || name.value.trim().length < 2) {
+        name.classList.add('error'); valid = false;
+      } else { name.classList.remove('error'); }
+
+      // Email
+      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailReg.test(email.value.trim())) {
+        email.classList.add('error'); valid = false;
+      } else { email.classList.remove('error'); }
+
+      // WhatsApp
+      const phone = whatsapp.value.replace(/\s/g, '');
+      if (phone.length < 10) {
+        whatsapp.classList.add('error'); valid = false;
+      } else { whatsapp.classList.remove('error'); }
+
+      return valid;
+    }
+
+    // Remove error on input
+    ['name','email','whatsapp'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function() {
+        this.classList.remove('error');
+      });
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!validate()) return;
+
+      // Show loading
+      submitBtn.textContent = 'Registering...';
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+
+      // Collect data
+      const data = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        whatsapp: document.getElementById('whatsapp').value.trim(),
+        timestamp: new Date().toISOString(),
+        source: document.referrer || 'direct'
+      };
+
+      // ─── REPLACE THIS with your webhook URL (n8n, Make, Formspree, etc.) ───
+      const WEBHOOK_URL = 'https://formspree.io/f/xjgpazdl';
+
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(() => showSuccess())
+      .catch(() => showSuccess()); // Show success even if webhook fails — handle manually
+    });
+
+    function showSuccess() {
+      formState.style.display = 'none';
+      successState.style.display = 'block';
+      // Redirect to thank you page after 3 seconds
+      setTimeout(() => {
+        window.location.href = 'thankyou.html';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

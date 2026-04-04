@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're Registered! — Canada Without Agents Masterclass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --forest: #0B2A1A;
+      --pine:   #1A4A2E;
+      --leaf:   #2D7A4F;
+      --maple:  #C8102E;
+      --maple2: #E03050;
+      --gold:   #E8A020;
+      --cream:  #FAF7F0;
+      --white:  #FFFFFF;
+      --ink:    #0D0D0D;
+      --muted:  #6B6B6B;
+      --border: #E2E2DC;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream); color: var(--ink);
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--forest); padding: 1rem 5%;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid rgba(232,160,32,0.15);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); }
+    .nav-logo span { color: rgba(255,255,255,0.6); font-style: italic; font-weight: 400; }
+
+    /* PROGRESS */
+    .progress {
+      background: var(--white); border-bottom: 1px solid var(--border); padding: 0.9rem 5%;
+    }
+    .progress-inner { max-width: 560px; margin: 0 auto; display: flex; align-items: center; gap: 0; }
+    .step {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--muted); flex: 1;
+    }
+    .step.done { color: var(--leaf); }
+    .step-dot {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800;
+      border: 2px solid var(--border); background: white; color: var(--muted);
+    }
+    .step.done .step-dot { border-color: var(--leaf); background: var(--leaf); color: white; }
+    .step-line { flex: 1; height: 2px; background: var(--leaf); margin: 0 0.3rem; }
+
+    /* MAIN */
+    main { flex: 1; padding: 4rem 5%; display: flex; align-items: flex-start; justify-content: center; }
+    .thankyou-wrap { max-width: 720px; width: 100%; }
+
+    /* CONFETTI HEADER */
+    .ty-header {
+      background: var(--forest);
+      padding: 3.5rem 3rem; text-align: center;
+      position: relative; overflow: hidden; margin-bottom: 1.5rem;
+    }
+    .ty-header::before {
+      content: '🍁';
+      position: absolute; font-size: 18rem; opacity: 0.05;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .ty-icon { font-size: 3.5rem; margin-bottom: 1rem; position: relative; z-index: 1; animation: bounce 1s ease infinite alternate; }
+    @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-8px); } }
+    .ty-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900; color: white; line-height: 1.15;
+      margin-bottom: 0.7rem; position: relative; z-index: 1;
+    }
+    .ty-header h1 em { color: var(--gold); font-style: italic; }
+    .ty-header p { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+
+    /* WHAT'S NEXT */
+    .next-steps { background: white; border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 1.5rem; }
+    .next-steps h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 900; color: var(--forest);
+      margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .next-steps h2::before { content: '📋'; font-size: 1.2rem; }
+    .next-step {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .next-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .next-step-num {
+      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      background: var(--maple); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 900;
+    }
+    .next-step-num.done { background: var(--leaf); }
+    .next-step h4 { font-size: 0.93rem; font-weight: 700; color: var(--forest); margin-bottom: 0.3rem; }
+    .next-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+    .next-step .tag {
+      display: inline-block; margin-top: 0.5rem;
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: rgba(45,122,79,0.08); color: var(--leaf);
+      padding: 0.2rem 0.5rem;
+    }
+    .next-step .tag.pending { background: rgba(200,16,46,0.08); color: var(--maple); }
+
+    /* OFFER TEASER */
+    .offer-teaser {
+      background: var(--forest);
+      border: 1px solid rgba(232,160,32,0.25);
+      padding: 2.5rem; margin-bottom: 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .offer-teaser::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0; width: 40%;
+      background: radial-gradient(ellipse at right, rgba(200,16,46,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .offer-eyebrow {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.7rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .offer-eyebrow::before { content: ''; width: 16px; height: 2px; background: var(--gold); flex-shrink: 0; }
+    .offer-teaser h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 900;
+      color: white; margin-bottom: 0.5rem; line-height: 1.25;
+      position: relative; z-index: 1;
+    }
+    .offer-teaser h3 em { color: var(--gold); font-style: italic; }
+    .offer-teaser p {
+      font-size: 0.85rem; color: rgba(255,255,255,0.6);
+      line-height: 1.7; margin-bottom: 1.5rem;
+      position: relative; z-index: 1; max-width: 480px;
+    }
+    .offer-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+      margin-bottom: 1.8rem; position: relative; z-index: 1;
+    }
+    .offer-feat {
+      display: flex; gap: 0.5rem; align-items: flex-start;
+      font-size: 0.78rem; color: rgba(255,255,255,0.75);
+    }
+    .offer-feat::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .offer-price {
+      display: flex; align-items: flex-end; gap: 1rem;
+      margin-bottom: 1.2rem; position: relative; z-index: 1;
+      flex-wrap: wrap;
+    }
+    .price-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .price-big sup { font-size: 1.4rem; vertical-align: super; }
+    .price-old-block { display: flex; flex-direction: column; gap: 0.2rem; }
+    .price-old-num { font-size: 0.9rem; color: rgba(255,255,255,0.3); text-decoration: line-through; }
+    .price-save {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      padding: 0.2rem 0.5rem;
+    }
+    .btn-offer {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.92rem; font-weight: 800;
+      letter-spacing: 0.03em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      border: none; padding: 1rem 2.2rem;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(200,16,46,0.4);
+      position: relative; z-index: 1;
+    }
+    .btn-offer:hover { background: var(--maple2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,16,46,0.5); }
+    .offer-guarantee { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.6rem; position: relative; z-index: 1; }
+    .offer-guarantee::before { content: '🔒 '; }
+
+    /* SHARE SECTION */
+    .share { background: white; border: 1px solid var(--border); padding: 2rem; text-align: center; }
+    .share h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900; color: var(--forest); margin-bottom: 0.4rem; }
+    .share p { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.6; }
+    .share-btns { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 700;
+      padding: 0.6rem 1.2rem; border: none;
+      cursor: pointer; text-decoration: none;
+      transition: transform 0.15s, opacity 0.2s;
+    }
+    .share-btn:hover { transform: translateY(-1px); opacity: 0.9; }
+    .share-wa { background: #25D366; color: white; }
+    .share-fb { background: #1877F2; color: white; }
+    .share-tw { background: #000; color: white; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); padding: 1.5rem 5%;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      margin-top: 3rem;
+    }
+    footer p { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .ty-header { padding: 2.5rem 1.5rem; }
+      .next-steps { padding: 1.8rem 1.5rem; }
+      .offer-teaser { padding: 1.8rem 1.5rem; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .progress-inner .step span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Canada<span> Without Agents</span></div>
+  </nav>
+
+  <!-- PROGRESS -->
+  <div class="progress">
+    <div class="progress-inner">
+      <div class="step done">
+        <div class="step-dot">✓</div>
+        <span>Register</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step done">
+        <div class="step-dot">✓</div>
+        <span>Confirm</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step done">
+        <div class="step-dot">▶</div>
+        <span>Watch</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="thankyou-wrap">
+
+      <!-- HEADER -->
+      <div class="ty-header">
+        <div class="ty-icon">🎉</div>
+        <h1>You're registered!<br/><em>The link is on its way.</em></h1>
+        <p>Check your WhatsApp — the masterclass link will be sent to your number within a few minutes. Keep an eye out!</p>
+      </div>
+
+      <!-- NEXT STEPS -->
+      <div class="next-steps">
+        <h2>What happens next</h2>
+        <div class="next-step">
+          <div class="next-step-num done">✓</div>
+          <div>
+            <h4>You've registered</h4>
+            <p>Your name, email, and WhatsApp have been received. You're officially on the list.</p>
+            <div class="tag">Done ✓</div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">2</div>
+          <div>
+            <h4>You receive the masterclass link on WhatsApp</h4>
+            <p>Within the next few minutes, you'll receive a WhatsApp message with the link to watch the free masterclass. If it takes longer than 15 minutes, check that you entered your number correctly.</p>
+            <div class="tag pending">Coming soon</div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">3</div>
+          <div>
+            <h4>Watch the full masterclass</h4>
+            <p>Go through the entire training at your own pace. Take notes. By the end, you'll have everything you need to start your Canadian student visa application — without a single agent.</p>
+            <div class="tag pending">After you get the link</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFER TEASER -->
+      <div class="offer-teaser">
+        <div class="offer-eyebrow">Special Offer for Registered Students</div>
+        <h3>Want the complete<br/><em>step-by-step guide</em> too?</h3>
+        <p>The masterclass gives you the overview. The full guide gives you every document checklist, SOP template, proof of funds letter, refusal recovery plan, and the PR pathway — all in one place.</p>
+        <div class="offer-grid">
+          <div class="offer-feat">12 comprehensive chapters</div>
+          <div class="offer-feat">Proof of funds templates</div>
+          <div class="offer-feat">Sample SOP (Google Doc)</div>
+          <div class="offer-feat">Sponsorship letter template</div>
+          <div class="offer-feat">Refusal & GCMS notes guide</div>
+          <div class="offer-feat">PR pathway explained</div>
+          <div class="offer-feat">Family sponsorship guide</div>
+          <div class="offer-feat">Lifetime updates included</div>
+        </div>
+        <div class="offer-price">
+          <div class="price-big"><sup>₦</sup>10,000</div>
+          <div class="price-old-block">
+            <div class="price-old-num">₦25,000</div>
+            <div class="price-save">Save 60%</div>
+          </div>
+        </div>
+        <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-offer">
+          🍁 Get the Complete Guide — ₦10,000 →
+        </a>
+        <div class="offer-guarantee">30-Day Money-Back Guarantee. No questions asked.</div>
+      </div>
+
+      <!-- SHARE -->
+      <div class="share">
+        <h3>Know someone who needs this? 🙏</h3>
+        <p>Share the free masterclass with a friend who's trying to get to Canada. It costs them nothing and could save them hundreds of thousands.</p>
+        <div class="share-btns">
+          <a href="https://wa.me/?text=I%20just%20registered%20for%20a%20free%20masterclass%20on%20how%20to%20get%20a%20Canadian%20student%20visa%20without%20paying%20agents.%20Register%20free%20here%3A%20https://japa-to-canada.vercel.app" target="_blank" class="share-btn share-wa">📱 Share on WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://japa-to-canada.vercel.app" target="_blank" class="share-btn share-fb">Facebook</a>
+          <a href="https://twitter.com/intent/tweet?text=Free%20masterclass%20for%20Nigerians%20%E2%80%94%20How%20to%20get%20your%20Canadian%20student%20visa%20without%20paying%20agents.%20Register%20free%3A%20https://japa-to-canada.vercel.app" target="_blank" class="share-btn share-tw">𝕏 Twitter</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Canada Without Agents 🍁</div>
+    <p>© 2025 Ayodeji Akinola Oshunjaiye. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
