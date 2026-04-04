@@ -25,6 +25,87 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
+    /* ── COUNTDOWN BAR ── */
+    .countdown-bar {
+      background: var(--forest);
+      border-bottom: 1px solid rgba(232,160,32,0.2);
+      padding: 0.85rem 5%;
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.2rem; flex-wrap: wrap;
+    }
+    .cd-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .cd-label::before { content: '⏳'; font-size: 0.85rem; }
+    .cd-blocks { display: flex; align-items: center; gap: 0.5rem; }
+    .cd-block {
+      display: flex; flex-direction: column; align-items: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(232,160,32,0.2);
+      padding: 0.35rem 0.75rem; min-width: 52px;
+    }
+    .cd-block .cd-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--gold); line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .cd-block .cd-unit {
+      font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-top: 0.2rem;
+    }
+    .cd-sep {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 900;
+      color: rgba(232,160,32,0.4); line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .cd-cta-text {
+      font-size: 0.78rem; font-weight: 600;
+      color: rgba(255,255,255,0.6);
+    }
+    .cd-cta-text strong { color: var(--gold); }
+
+    /* ── HERO COUNTDOWN (inside hero) ── */
+    .hero-countdown {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.8rem; flex-wrap: wrap;
+      background: rgba(200,16,46,0.12);
+      border: 1px solid rgba(200,16,46,0.25);
+      padding: 0.9rem 1.5rem;
+      max-width: 560px; margin: 0 auto 2rem;
+    }
+    .hero-cd-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-cd-timer {
+      display: flex; align-items: center; gap: 0.3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 900;
+      color: var(--gold); letter-spacing: 0.05em;
+      font-variant-numeric: tabular-nums;
+    }
+    .hero-cd-timer .hero-cd-sep { color: rgba(232,160,32,0.5); font-size: 1.3rem; }
+    .hero-cd-sub {
+      font-size: 0.7rem; font-weight: 600;
+      color: var(--maple2); letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── PULSE ANIMATION on last 10 mins ── */
+    @keyframes pulse-red {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .countdown-urgent .cd-num { color: var(--maple2); animation: pulse-red 1s ease infinite; }
+    .countdown-urgent .hero-cd-timer { color: var(--maple2); animation: pulse-red 1s ease infinite; }
+
     /* ── TOP BAR ── */
     .topbar {
       background: var(--maple);
@@ -305,6 +386,28 @@
     <div class="nav-logo">Canada<span> Without Agents</span></div>
   </nav>
 
+  <!-- COUNTDOWN BAR -->
+  <div class="countdown-bar" id="countdownBar">
+    <div class="cd-label">Free access closes in</div>
+    <div class="cd-blocks">
+      <div class="cd-block">
+        <span class="cd-num" id="cd-hours">48</span>
+        <span class="cd-unit">Hours</span>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-mins">00</span>
+        <span class="cd-unit">Mins</span>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-secs">00</span>
+        <span class="cd-unit">Secs</span>
+      </div>
+    </div>
+    <div class="cd-cta-text"><strong>Register now</strong> before this closes</div>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
@@ -327,6 +430,19 @@
           <div class="video-mockup-label">How to Get Your Canadian Student Visa<br/>Without Paying a Single Agent</div>
           <div class="video-mockup-sub">Register free to get instant access →</div>
         </div>
+      </div>
+
+      <!-- HERO COUNTDOWN -->
+      <div class="hero-countdown" id="heroCountdown">
+        <div class="hero-cd-label">⚠️ This offer closes in</div>
+        <div class="hero-cd-timer">
+          <span id="hcd-hours">48</span>
+          <span class="hero-cd-sep">:</span>
+          <span id="hcd-mins">00</span>
+          <span class="hero-cd-sep">:</span>
+          <span id="hcd-secs">00</span>
+        </div>
+        <div class="hero-cd-sub">Register before time runs out</div>
       </div>
 
       <a href="register.html" class="btn-register">👉 Register Free — Watch Now</a>
@@ -474,8 +590,64 @@
   </div>
 
   <script>
-    const obs = new IntersectionObserver(e => e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('in'); obs.unobserve(el.target); } }), { threshold: 0.12 });
+    // ── SCROLL REVEAL ──
+    const obs = new IntersectionObserver(e => e.forEach(el => {
+      if (el.isIntersecting) { el.target.classList.add('in'); obs.unobserve(el.target); }
+    }), { threshold: 0.12 });
     document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+    // ── ROLLING 48-HOUR COUNTDOWN ──
+    const DURATION = 48 * 60 * 60 * 1000; // 48 hours in ms
+    const KEY = 'cwa_deadline';
+
+    function getDeadline() {
+      let stored = localStorage.getItem(KEY);
+      if (stored) {
+        const deadline = parseInt(stored, 10);
+        // If deadline already passed, reset to a fresh 48 hours
+        if (deadline <= Date.now()) {
+          const fresh = Date.now() + DURATION;
+          localStorage.setItem(KEY, fresh);
+          return fresh;
+        }
+        return deadline;
+      } else {
+        const fresh = Date.now() + DURATION;
+        localStorage.setItem(KEY, fresh);
+        return fresh;
+      }
+    }
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function updateCountdown() {
+      const deadline = getDeadline();
+      const diff = Math.max(0, deadline - Date.now());
+
+      const totalSecs = Math.floor(diff / 1000);
+      const hours     = Math.floor(totalSecs / 3600);
+      const mins      = Math.floor((totalSecs % 3600) / 60);
+      const secs      = totalSecs % 60;
+
+      // Update top bar
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+
+      // Update hero timer
+      document.getElementById('hcd-hours').textContent = pad(hours);
+      document.getElementById('hcd-mins').textContent  = pad(mins);
+      document.getElementById('hcd-secs').textContent  = pad(secs);
+
+      // Go urgent (pulse red) when under 10 minutes
+      const urgent = diff < 10 * 60 * 1000;
+      document.getElementById('countdownBar').classList.toggle('countdown-urgent', urgent);
+      document.getElementById('heroCountdown').classList.toggle('countdown-urgent', urgent);
+    }
+
+    // Run immediately then every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
