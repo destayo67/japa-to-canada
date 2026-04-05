@@ -389,7 +389,7 @@
       };
 
       // ─── REPLACE THIS with your webhook URL (n8n, Make, Formspree, etc.) ───
-      const WEBHOOK_URL = 'https://formspree.io/f/xjgpazdl';
+      const WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE';
 
       fetch(WEBHOOK_URL, {
         method: 'POST',
@@ -403,10 +403,10 @@
     function showSuccess() {
       formState.style.display = 'none';
       successState.style.display = 'block';
-      // Redirect to thank you page after 3 seconds
+      // Redirect to watch page after 2 seconds
       setTimeout(() => {
-        window.location.href = 'thankyou.html';
-      }, 3000);
+        window.location.href = 'watch.html';
+      }, 2000);
     }
   </script>
 </body>

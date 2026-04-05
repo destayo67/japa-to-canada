@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch — Canadian Student Visa Masterclass</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --forest: #0B2A1A;
+      --pine:   #1A4A2E;
+      --leaf:   #2D7A4F;
+      --maple:  #C8102E;
+      --maple2: #E03050;
+      --gold:   #E8A020;
+      --cream:  #FAF7F0;
+      --white:  #FFFFFF;
+      --ink:    #0D0D0D;
+      --muted:  #6B6B6B;
+      --border: #E2E2DC;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--forest);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(11,42,26,0.95);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(232,160,32,0.15);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--gold);
+    }
+    .nav-logo span { color: rgba(255,255,255,0.55); font-style: italic; font-weight: 400; }
+    .nav-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .nav-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--maple);
+      animation: pulse-dot 1.5s ease infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-wrap {
+      background: rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 0.6rem 5%;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .progress-label {
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); white-space: nowrap;
+    }
+    .progress-track {
+      flex: 1; height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; width: 0%;
+      background: var(--maple);
+      border-radius: 2px;
+      transition: width 1s linear;
+    }
+    .progress-time {
+      font-size: 0.68rem; font-weight: 600;
+      color: rgba(255,255,255,0.35); white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main {
+      max-width: 1100px; margin: 0 auto;
+      padding: 2.5rem 5%;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* ── VIDEO SECTION ── */
+    .video-col {}
+    .video-eyebrow {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+    }
+    .video-eyebrow::before { content: ''; width: 16px; height: 2px; background: var(--gold); flex-shrink: 0; }
+    .video-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 900; line-height: 1.15;
+      color: white; margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .video-title em { color: var(--gold); font-style: italic; }
+    .video-sub {
+      font-size: 0.85rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 1.4rem; line-height: 1.6;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      border: 1px solid rgba(232,160,32,0.15);
+      overflow: hidden;
+    }
+    .video-wrapper iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* video warning bar */
+    .video-note {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-top: 0.8rem;
+      font-size: 0.75rem; color: rgba(255,255,255,0.35);
+      padding: 0.6rem 0.8rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .video-note span { color: var(--gold); flex-shrink: 0; }
+
+    /* chapters list */
+    .chapters {
+      margin-top: 1.8rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+    .chapters-header {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .chapter-item {
+      display: flex; align-items: center; gap: 0.8rem;
+      padding: 0.75rem 1.2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.82rem; color: rgba(255,255,255,0.55);
+      transition: background 0.2s;
+    }
+    .chapter-item:last-child { border-bottom: none; }
+    .chapter-item:hover { background: rgba(255,255,255,0.03); }
+    .chapter-item.active {
+      color: var(--gold);
+      background: rgba(232,160,32,0.06);
+    }
+    .chapter-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: rgba(255,255,255,0.2); min-width: 20px;
+    }
+    .chapter-item.active .chapter-num { color: var(--gold); }
+    .chapter-time {
+      margin-left: auto;
+      font-size: 0.7rem; font-variant-numeric: tabular-nums;
+      color: rgba(255,255,255,0.25);
+    }
+    .chapter-item.active .chapter-time { color: rgba(232,160,32,0.6); }
+    .chapter-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); flex-shrink: 0;
+    }
+    .chapter-item.active .chapter-dot { background: var(--maple); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    /* host card */
+    .host-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 1.4rem;
+    }
+    .host-top { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+    .host-avatar {
+      width: 44px; height: 44px;
+      background: rgba(232,160,32,0.12);
+      border: 1px solid rgba(232,160,32,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem; font-weight: 900; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .host-name { font-size: 0.88rem; font-weight: 700; color: white; }
+    .host-title { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 0.15rem; }
+    .host-bio { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    /* offer card (sidebar teaser) */
+    .offer-card {
+      background: rgba(200,16,46,0.12);
+      border: 1px solid rgba(200,16,46,0.25);
+      padding: 1.4rem;
+      position: relative; overflow: hidden;
+    }
+    .offer-card::before {
+      content: '🍁';
+      position: absolute; font-size: 6rem; opacity: 0.06;
+      bottom: -1rem; right: -0.5rem; line-height: 1;
+      pointer-events: none;
+    }
+    .offer-eyebrow {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--maple2); margin-bottom: 0.5rem;
+    }
+    .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 900;
+      color: white; line-height: 1.25; margin-bottom: 0.5rem;
+    }
+    .offer-title em { color: var(--gold); font-style: italic; }
+    .offer-desc { font-size: 0.75rem; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 1rem; }
+    .offer-price-row {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .offer-price-now {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 900; color: var(--gold);
+    }
+    .offer-price-now sup { font-size: 0.9rem; vertical-align: super; }
+    .offer-price-old { font-size: 0.82rem; color: rgba(255,255,255,0.25); text-decoration: line-through; }
+    .btn-offer-side {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%; padding: 0.8rem;
+      background: var(--maple); color: white;
+      border: none; font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem; font-weight: 800;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-offer-side:hover { background: var(--maple2); transform: translateY(-1px); }
+    .offer-guarantee {
+      font-size: 0.68rem; color: rgba(255,255,255,0.25);
+      text-align: center; margin-top: 0.6rem;
+    }
+    .offer-guarantee::before { content: '🔒 '; }
+
+    /* social proof */
+    .social-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 1.2rem;
+    }
+    .social-card h4 {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); margin-bottom: 0.8rem;
+    }
+    .review-mini { margin-bottom: 0.9rem; padding-bottom: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .review-mini:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .review-stars { color: var(--gold); font-size: 0.7rem; margin-bottom: 0.3rem; }
+    .review-text { font-size: 0.75rem; font-style: italic; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 0.35rem; }
+    .review-author { font-size: 0.68rem; font-weight: 700; color: rgba(255,255,255,0.3); }
+
+    /* ── OVERLAY (popup) ── */
+    .overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(5,20,12,0.88);
+      backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .overlay.show { opacity: 1; pointer-events: all; }
+
+    .popup {
+      background: var(--forest);
+      border: 1px solid rgba(232,160,32,0.3);
+      max-width: 560px; width: 100%;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(30px) scale(0.97);
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .overlay.show .popup { transform: translateY(0) scale(1); }
+
+    /* popup bg effect */
+    .popup::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 90% 0%, rgba(200,16,46,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 100%, rgba(45,122,79,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .popup-close {
+      position: absolute; top: 12px; right: 14px; z-index: 10;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.45);
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; cursor: pointer; border-radius: 50%;
+      transition: background 0.2s, color 0.2s;
+      font-family: sans-serif; font-weight: 300;
+    }
+    .popup-close:hover { background: rgba(255,255,255,0.12); color: white; }
+
+    .popup-header {
+      background: var(--maple);
+      padding: 0.8rem 1.5rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .popup-header-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      animation: pulse-dot 1s ease infinite;
+    }
+    .popup-header-text {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .popup-body { padding: 2rem 2rem 1.5rem; position: relative; z-index: 1; }
+
+    .popup-eyebrow {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.7rem;
+    }
+    .popup-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900; line-height: 1.15;
+      color: white; margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    .popup-title em { color: var(--gold); font-style: italic; }
+    .popup-desc {
+      font-size: 0.87rem; color: rgba(255,255,255,0.58);
+      line-height: 1.72; margin-bottom: 1.4rem;
+    }
+    .popup-desc strong { color: rgba(255,255,255,0.88); }
+
+    .popup-feats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.55rem; margin-bottom: 1.6rem;
+    }
+    .popup-feat {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.72); line-height: 1.4;
+    }
+    .popup-feat::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    .popup-price-row {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.2rem; flex-wrap: wrap;
+    }
+    .popup-price-now {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .popup-price-now sup { font-size: 1.3rem; vertical-align: super; }
+    .popup-price-detail { display: flex; flex-direction: column; gap: 0.3rem; }
+    .popup-price-old { font-size: 0.85rem; color: rgba(255,255,255,0.3); text-decoration: line-through; }
+    .popup-save {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* countdown inside popup */
+    .popup-countdown {
+      display: flex; align-items: center; gap: 0.8rem;
+      background: rgba(200,16,46,0.12);
+      border: 1px solid rgba(200,16,46,0.2);
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.2rem; flex-wrap: wrap;
+    }
+    .pcd-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .pcd-timer {
+      display: flex; align-items: center; gap: 0.3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 900;
+      color: var(--maple2);
+      font-variant-numeric: tabular-nums;
+    }
+    .pcd-sep { color: rgba(200,16,46,0.4); }
+
+    .btn-popup-buy {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      width: 100%; padding: 1.1rem;
+      background: var(--maple); color: white;
+      border: none; font-family: 'Outfit', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(200,16,46,0.4);
+      margin-bottom: 0.8rem;
+    }
+    .btn-popup-buy:hover { background: var(--maple2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,16,46,0.5); }
+
+    .popup-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .popup-guarantee {
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .popup-guarantee::before { content: '🔒'; font-size: 0.8rem; }
+    .popup-skip {
+      font-size: 0.72rem; color: rgba(255,255,255,0.2);
+      cursor: pointer; text-decoration: underline;
+      background: none; border: none; color: rgba(255,255,255,0.25);
+      transition: color 0.2s;
+    }
+    .popup-skip:hover { color: rgba(255,255,255,0.5); }
+
+    /* ── REMINDER BAR ── */
+    .reminder-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 500;
+      background: var(--forest);
+      border-top: 1px solid rgba(232,160,32,0.2);
+      padding: 0.8rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .reminder-bar.show { transform: translateY(0); }
+    .reminder-bar.hide { transform: translateY(100%); }
+    .reminder-left { display: flex; flex-direction: column; gap: 0.1rem; }
+    .reminder-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem; font-weight: 900; color: white;
+    }
+    .reminder-sub { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+    .reminder-right { display: flex; align-items: center; gap: 0.8rem; }
+    .reminder-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 900; color: var(--gold);
+    }
+    .btn-reminder {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 800;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      background: var(--maple); color: white;
+      border: none; padding: 0.65rem 1.3rem;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-reminder:hover { background: var(--maple2); }
+    .reminder-close {
+      background: none; border: none;
+      color: rgba(255,255,255,0.25); cursor: pointer;
+      font-size: 1.1rem; padding: 0.3rem;
+      transition: color 0.2s;
+    }
+    .reminder-close:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 1.5rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      margin-top: 3rem;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--gold); }
+    footer p { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .main { grid-template-columns: 1fr; }
+      .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .sidebar { grid-template-columns: 1fr; }
+      .popup-feats { grid-template-columns: 1fr; }
+      .popup-body { padding: 1.5rem; }
+      .popup-price-now { font-size: 2.2rem; }
+      .reminder-bar { flex-direction: column; align-items: flex-start; }
+      .reminder-right { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Canada<span> Without Agents</span></div>
+    <div class="nav-badge">
+      <div class="nav-dot"></div>
+      Masterclass — Now Playing
+    </div>
+  </nav>
+
+  <!-- VIDEO PROGRESS BAR -->
+  <div class="progress-wrap">
+    <div class="progress-label">Your progress</div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-time" id="progressTime">0:00 / 24:57</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- VIDEO COLUMN -->
+    <div class="video-col">
+      <div class="video-eyebrow">Free Masterclass</div>
+      <div class="video-title">
+        How to Get Your Canadian Student Visa<br/>
+        <em>Without Paying a Single Agent</em>
+      </div>
+      <div class="video-sub">Watch the full masterclass below — take notes, follow every step.</div>
+
+      <!-- YOUTUBE EMBED -->
+      <div class="video-wrapper">
+        <div id="player"></div>
+      </div>
+
+      <div class="video-note">
+        <span>💡</span>
+        Watch to the end — a special offer for action-takers will appear during the masterclass.
+      </div>
+
+      <!-- CHAPTERS -->
+      <div class="chapters">
+        <div class="chapters-header">What's covered in this masterclass</div>
+        <div class="chapter-item active" id="ch-0">
+          <div class="chapter-dot"></div>
+          <div class="chapter-num">01</div>
+          How Canada's immigration system really works
+          <div class="chapter-time">0:00</div>
+        </div>
+        <div class="chapter-item" id="ch-1">
+          <div class="chapter-dot"></div>
+          <div class="chapter-num">02</div>
+          Choosing the right DLI school & program
+          <div class="chapter-time">4:00</div>
+        </div>
+        <div class="chapter-item" id="ch-2">
+          <div class="chapter-dot"></div>
+          <div class="chapter-num">03</div>
+          Proof of funds — the legal, clean way
+          <div class="chapter-time">8:30</div>
+        </div>
+        <div class="chapter-item" id="ch-3">
+          <div class="chapter-dot"></div>
+          <div class="chapter-num">04</div>
+          Writing an SOP that gets approved
+          <div class="chapter-time">13:00</div>
+        </div>
+        <div class="chapter-item" id="ch-4">
+          <div class="chapter-dot"></div>
+          <div class="chapter-num">05</div>
+          IRCC portal walkthrough — step by step
+          <div class="chapter-time">17:30</div>
+        </div>
+        <div class="chapter-item" id="ch-5">
+          <div class="chapter-dot"></div>
+          <div class="chapter-num">06</div>
+          What to do if your visa is refused
+          <div class="chapter-time">22:00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- HOST -->
+      <div class="host-card">
+        <div class="host-top">
+          <div class="host-avatar">AO</div>
+          <div>
+            <div class="host-name">Ayodeji Akinola Oshunjaiye</div>
+            <div class="host-title">Author · Canada Without Agents</div>
+          </div>
+        </div>
+        <div class="host-bio">
+          "I walked the entire path — from Lagos to a Canadian student visa without paying a single agent. I wrote this masterclass so you can do the same."
+        </div>
+      </div>
+
+      <!-- OFFER CARD -->
+      <div class="offer-card">
+        <div class="offer-eyebrow">🔥 Special Offer</div>
+        <div class="offer-title">Get the <em>Complete Guide</em></div>
+        <div class="offer-desc">The masterclass is the overview. The full guide gives you every checklist, template, and step — in one PDF.</div>
+        <div class="offer-price-row">
+          <div class="offer-price-now"><sup>₦</sup>10,000</div>
+          <div class="offer-price-old">₦25,000</div>
+        </div>
+        <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-offer-side">
+          Get Full Guide →
+        </a>
+        <div class="offer-guarantee">30-Day Money-Back Guarantee</div>
+      </div>
+
+      <!-- SOCIAL PROOF -->
+      <div class="social-card">
+        <h4>What others are saying</h4>
+        <div class="review-mini">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Got approved in 8 weeks. No agent. Just this guide."</div>
+          <div class="review-author">— Kemi A., Lagos → Winnipeg</div>
+        </div>
+        <div class="review-mini">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"The proof of funds section alone is worth 10x the price."</div>
+          <div class="review-author">— Emeka O., Enugu → Brampton</div>
+        </div>
+        <div class="review-mini">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Reapplied after a refusal. Got approved. This guide was the difference."</div>
+          <div class="review-author">— Fatima A., Abuja → Calgary</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Canada Without Agents 🍁</div>
+    <p>© 2025 Ayodeji Akinola Oshunjaiye. All rights reserved.</p>
+  </footer>
+
+  <!-- ═══ POPUP OVERLAY ═══ -->
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+
+      <div class="popup-header">
+        <div class="popup-header-dot"></div>
+        <div class="popup-header-text">🍁 Special Offer — For Action Takers Only</div>
+      </div>
+
+      <div class="popup-body">
+        <div class="popup-eyebrow">You've seen what's possible — now go all the way</div>
+        <div class="popup-title">
+          Get the <em>Complete</em><br/>
+          Step-by-Step Guide
+        </div>
+        <div class="popup-desc">
+          The masterclass gave you the overview. The full guide gives you
+          <strong>every document checklist, SOP template, proof of funds letter,
+          refusal recovery plan, and PR pathway</strong> — all in one place.
+          Do it once. Do it right.
+        </div>
+
+        <div class="popup-feats">
+          <div class="popup-feat">12 comprehensive chapters</div>
+          <div class="popup-feat">Proof of funds templates</div>
+          <div class="popup-feat">Sample SOP (Google Doc)</div>
+          <div class="popup-feat">Sponsorship letter template</div>
+          <div class="popup-feat">IRCC portal walkthrough</div>
+          <div class="popup-feat">Visa refusal recovery plan</div>
+          <div class="popup-feat">Post-graduation work permit</div>
+          <div class="popup-feat">PR pathway explained</div>
+          <div class="popup-feat">Family sponsorship guide</div>
+          <div class="popup-feat">Lifetime updates included</div>
+        </div>
+
+        <!-- COUNTDOWN IN POPUP -->
+        <div class="popup-countdown">
+          <div class="pcd-label">⏳ This offer closes in</div>
+          <div class="pcd-timer">
+            <span id="pcd-h">47</span>
+            <span class="pcd-sep">:</span>
+            <span id="pcd-m">59</span>
+            <span class="pcd-sep">:</span>
+            <span id="pcd-s">59</span>
+          </div>
+        </div>
+
+        <div class="popup-price-row">
+          <div class="popup-price-now"><sup>₦</sup>10,000</div>
+          <div class="popup-price-detail">
+            <div class="popup-price-old">₦25,000</div>
+            <div class="popup-save">Save 60%</div>
+          </div>
+        </div>
+
+        <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-popup-buy">
+          🍁 Yes — I Want the Complete Guide →
+        </a>
+
+        <div class="popup-footer">
+          <div class="popup-guarantee">30-Day Money-Back Guarantee. No questions.</div>
+          <button class="popup-skip" onclick="closePopup()">No thanks, I'll figure it out myself</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ REMINDER BAR ═══ -->
+  <div class="reminder-bar" id="reminderBar">
+    <div class="reminder-left">
+      <div class="reminder-title">Get the Complete Guide — Canada Without Agents</div>
+      <div class="reminder-sub">12 chapters · Templates · Checklists · PR pathway · ₦10,000 only</div>
+    </div>
+    <div class="reminder-right">
+      <div class="reminder-price">₦10,000</div>
+      <a href="https://nestuge.com/_cmilsjnk" target="_blank" rel="noopener" class="btn-reminder">Get It Now →</a>
+      <button class="reminder-close" onclick="dismissReminder()" aria-label="Close">✕</button>
+    </div>
+  </div>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    // ─────────────────────────────────────────────
+    // CONSTANTS
+    // ─────────────────────────────────────────────
+    const VIDEO_ID       = 'ArSHkwhoWm8';
+    const VIDEO_DURATION = 24 * 60 + 57;   // 1497 seconds
+    const POPUP_AT       = 20 * 60;         // 1200 seconds (20 minutes)
+    const CHAPTERS = [0, 240, 510, 780, 1050, 1320]; // rough timestamps
+
+    let player;
+    let popupShown     = false;
+    let reminderShown  = false;
+    let progressInterval;
+
+    // ─────────────────────────────────────────────
+    // YOUTUBE PLAYER INIT
+    // ─────────────────────────────────────────────
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: VIDEO_ID,
+        playerVars: {
+          autoplay: 0,
+          rel: 0,
+          modestbranding: 1,
+          color: 'white',
+          iv_load_policy: 3,
+        },
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      startProgressTracking();
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        startProgressTracking();
+      } else {
+        stopProgressTracking();
+      }
+    }
+
+    // ─────────────────────────────────────────────
+    // PROGRESS TRACKING
+    // ─────────────────────────────────────────────
+    function startProgressTracking() {
+      stopProgressTracking();
+      progressInterval = setInterval(tick, 1000);
+    }
+    function stopProgressTracking() {
+      clearInterval(progressInterval);
+    }
+
+    function tick() {
+      if (!player || typeof player.getCurrentTime !== 'function') return;
+      const current = Math.floor(player.getCurrentTime());
+      const pct     = Math.min(100, (current / VIDEO_DURATION) * 100);
+
+      // Update progress bar
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressTime').textContent =
+        formatTime(current) + ' / 24:57';
+
+      // Update active chapter
+      updateChapter(current);
+
+      // Trigger popup at 20 min
+      if (current >= POPUP_AT && !popupShown) {
+        popupShown = true;
+        showPopup();
+      }
+    }
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return m + ':' + String(s).padStart(2, '0');
+    }
+
+    function updateChapter(current) {
+      let active = 0;
+      for (let i = 0; i < CHAPTERS.length; i++) {
+        if (current >= CHAPTERS[i]) active = i;
+      }
+      document.querySelectorAll('.chapter-item').forEach((el, i) => {
+        el.classList.toggle('active', i === active);
+      });
+    }
+
+    // ─────────────────────────────────────────────
+    // POPUP
+    // ─────────────────────────────────────────────
+    function showPopup() {
+      // Pause video when popup shows
+      if (player && typeof player.pauseVideo === 'function') {
+        player.pauseVideo();
+      }
+      document.getElementById('overlay').classList.add('show');
+      startPopupCountdown();
+    }
+
+    function closePopup() {
+      document.getElementById('overlay').classList.remove('show');
+      // Show reminder bar after popup is closed
+      setTimeout(() => {
+        if (!reminderShown) {
+          reminderShown = true;
+          document.getElementById('reminderBar').classList.add('show');
+        }
+      }, 800);
+      // Resume video
+      if (player && typeof player.playVideo === 'function') {
+        player.playVideo();
+      }
+    }
+
+    function dismissReminder() {
+      document.getElementById('reminderBar').classList.remove('show');
+      document.getElementById('reminderBar').classList.add('hide');
+    }
+
+    // Close overlay on background click
+    document.getElementById('overlay').addEventListener('click', function(e) {
+      if (e.target === this) closePopup();
+    });
+
+    // ─────────────────────────────────────────────
+    // POPUP COUNTDOWN (syncs with page countdown)
+    // ─────────────────────────────────────────────
+    const COUNTDOWN_DURATION = 48 * 60 * 60 * 1000;
+    const CD_KEY = 'cwa_deadline';
+
+    function getDeadline() {
+      let stored = localStorage.getItem(CD_KEY);
+      if (stored) {
+        const d = parseInt(stored, 10);
+        if (d <= Date.now()) {
+          const fresh = Date.now() + COUNTDOWN_DURATION;
+          localStorage.setItem(CD_KEY, fresh);
+          return fresh;
+        }
+        return d;
+      }
+      const fresh = Date.now() + COUNTDOWN_DURATION;
+      localStorage.setItem(CD_KEY, fresh);
+      return fresh;
+    }
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function startPopupCountdown() {
+      function update() {
+        const diff     = Math.max(0, getDeadline() - Date.now());
+        const totalS   = Math.floor(diff / 1000);
+        const h        = Math.floor(totalS / 3600);
+        const m        = Math.floor((totalS % 3600) / 60);
+        const s        = totalS % 60;
+        document.getElementById('pcd-h').textContent = pad(h);
+        document.getElementById('pcd-m').textContent = pad(m);
+        document.getElementById('pcd-s').textContent = pad(s);
+      }
+      update();
+      setInterval(update, 1000);
+    }
+  </script>
+</body>
+</html>
